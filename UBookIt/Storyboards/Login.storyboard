@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Esu-h1-0bV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login-->
+        <scene sceneID="gQs-LP-Cpd">
+            <objects>
+                <viewController title="Login" id="Esu-h1-0bV" customClass="LoginViewController" customModule="UBookIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="flg-qD-aU7"/>
+                        <viewControllerLayoutGuide type="bottom" id="sIQ-bs-KlR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ddw-QJ-G6L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yvd-W4-SLQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UBookIt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGH-gJ-QXk">
+                                        <rect key="frame" x="0.0" y="150" width="367" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Z3h-dh-Wxk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="swaggy label of swagness" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CE1-bs-NaJ">
+                                        <rect key="frame" x="66" y="225" width="235" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.12941176470588234" green="0.70980392156862748" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Lr0-LI-QJD"/>
+                                    <constraint firstItem="bGH-gJ-QXk" firstAttribute="leading" secondItem="yvd-W4-SLQ" secondAttribute="leading" id="N86-0F-dEg"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="bGH-gJ-QXk" secondAttribute="trailing" id="WbE-sl-3o4"/>
+                                    <constraint firstItem="bGH-gJ-QXk" firstAttribute="top" secondItem="yvd-W4-SLQ" secondAttribute="top" constant="150" id="XfW-QH-fgz"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VqH-oY-Aak">
+                                <rect key="frame" x="112" y="316" width="150" height="34"/>
+                                <color key="backgroundColor" red="0.11438394758992469" green="0.62974394655803345" blue="0.84745140698960586" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="fNL-2X-gMl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Login/Register">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="Esu-h1-0bV" eventType="touchUpInside" id="2Kr-ee-7w9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="yvd-W4-SLQ" firstAttribute="leading" secondItem="ddw-QJ-G6L" secondAttribute="leading" id="2U8-ur-7r6"/>
+                            <constraint firstAttribute="trailing" secondItem="yvd-W4-SLQ" secondAttribute="trailing" id="9O3-qT-RIU"/>
+                            <constraint firstItem="yvd-W4-SLQ" firstAttribute="top" secondItem="ddw-QJ-G6L" secondAttribute="topMargin" id="UYc-Ml-FDi"/>
+                            <constraint firstItem="VqH-oY-Aak" firstAttribute="centerX" secondItem="ddw-QJ-G6L" secondAttribute="centerX" id="lLG-Jz-Wak"/>
+                            <constraint firstItem="VqH-oY-Aak" firstAttribute="centerY" secondItem="ddw-QJ-G6L" secondAttribute="centerY" id="qOr-32-9ns"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rqm-IG-YlK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-215.19999999999999" y="-91.304347826086968"/>
+        </scene>
+    </scenes>
+</document>

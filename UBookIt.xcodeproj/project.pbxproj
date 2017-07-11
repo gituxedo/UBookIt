@@ -8,22 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		187ABB6A1F1423E300722471 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABB691F1423E300722471 /* AppDelegate.swift */; };
-		187ABB6C1F1423E300722471 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABB6B1F1423E300722471 /* ViewController.swift */; };
-		187ABB6F1F1423E300722471 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB6D1F1423E300722471 /* Main.storyboard */; };
 		187ABB721F1423E300722471 /* UBookIt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 187ABB701F1423E300722471 /* UBookIt.xcdatamodeld */; };
 		187ABB741F1423E300722471 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB731F1423E300722471 /* Assets.xcassets */; };
-		187ABB771F1423E300722471 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB751F1423E300722471 /* LaunchScreen.storyboard */; };
+		187ABB891F14416B00722471 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABB881F14416B00722471 /* ViewController.swift */; };
+		187ABB8D1F1441B800722471 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB8B1F1441B800722471 /* Main.storyboard */; };
+		187ABB901F1441D200722471 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB8E1F1441D200722471 /* GoogleService-Info.plist */; };
+		187ABB951F1445EC00722471 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB941F1445EC00722471 /* LaunchScreen.storyboard */; };
+		187ABB971F1447E400722471 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB961F1447E400722471 /* Login.storyboard */; };
+		187ABB991F144A3100722471 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABB981F144A3100722471 /* LoginViewController.swift */; };
+		18DA3F711F155414007619E1 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DA3F701F155414007619E1 /* Location.storyboard */; };
+		18DA3F731F155488007619E1 /* Choice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DA3F721F155488007619E1 /* Choice.storyboard */; };
+		AA9E3D8E58F13B8583E2BC43 /* Pods_UBookIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A224B956677BA648ACEEAE /* Pods_UBookIt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B6957D9B80DC75F5234E6D8 /* Pods-UBookIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBookIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-UBookIt/Pods-UBookIt.release.xcconfig"; sourceTree = "<group>"; };
 		187ABB661F1423E300722471 /* UBookIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UBookIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		187ABB691F1423E300722471 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		187ABB6B1F1423E300722471 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		187ABB6E1F1423E300722471 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		187ABB711F1423E300722471 /* UBookIt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UBookIt.xcdatamodel; sourceTree = "<group>"; };
 		187ABB731F1423E300722471 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		187ABB761F1423E300722471 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		187ABB781F1423E300722471 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		187ABB881F14416B00722471 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = UBookIt/Controllers/ViewController.swift; sourceTree = "<group>"; };
+		187ABB8B1F1441B800722471 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = UBookIt/Storyboards/Main.storyboard; sourceTree = "<group>"; };
+		187ABB8E1F1441D200722471 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "UBookIt/Supporting/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		187ABB8F1F1441D200722471 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = UBookIt/Supporting/Info.plist; sourceTree = "<group>"; };
+		187ABB941F1445EC00722471 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = UBookIt/Supporting/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		187ABB961F1447E400722471 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = UBookIt/Storyboards/Login.storyboard; sourceTree = "<group>"; };
+		187ABB981F144A3100722471 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = UBookIt/Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		18DA3F701F155414007619E1 /* Location.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Location.storyboard; path = UBookIt/Storyboards/Location.storyboard; sourceTree = "<group>"; };
+		18DA3F721F155488007619E1 /* Choice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Choice.storyboard; path = UBookIt/Storyboards/Choice.storyboard; sourceTree = "<group>"; };
+		42A224B956677BA648ACEEAE /* Pods_UBookIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UBookIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7437B77AE645A4F1AE297CD /* Pods-UBookIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBookIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UBookIt/Pods-UBookIt.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA9E3D8E58F13B8583E2BC43 /* Pods_UBookIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +57,8 @@
 			children = (
 				187ABB681F1423E300722471 /* UBookIt */,
 				187ABB671F1423E300722471 /* Products */,
+				CDCD75A9939AAE955EEB50CF /* Pods */,
+				544C931189C22E23363F05FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +74,108 @@
 			isa = PBXGroup;
 			children = (
 				187ABB691F1423E300722471 /* AppDelegate.swift */,
-				187ABB6B1F1423E300722471 /* ViewController.swift */,
-				187ABB6D1F1423E300722471 /* Main.storyboard */,
 				187ABB731F1423E300722471 /* Assets.xcassets */,
-				187ABB751F1423E300722471 /* LaunchScreen.storyboard */,
-				187ABB781F1423E300722471 /* Info.plist */,
-				187ABB701F1423E300722471 /* UBookIt.xcdatamodeld */,
+				187ABB801F14410000722471 /* View Controllers */,
+				187ABB811F14411400722471 /* Extensions */,
+				187ABB821F14411A00722471 /* Helpers */,
+				187ABB871F14414000722471 /* Models */,
+				187ABB861F14413800722471 /* Services */,
+				187ABB851F14413000722471 /* Storyboards */,
+				187ABB841F14412B00722471 /* Supporting */,
+				187ABB831F14412000722471 /* Views */,
 			);
 			path = UBookIt;
+			sourceTree = "<group>";
+		};
+		187ABB801F14410000722471 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				187ABB881F14416B00722471 /* ViewController.swift */,
+				187ABB981F144A3100722471 /* LoginViewController.swift */,
+			);
+			name = "View Controllers";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		187ABB811F14411400722471 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		187ABB821F14411A00722471 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		187ABB831F14412000722471 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		187ABB841F14412B00722471 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				187ABB941F1445EC00722471 /* LaunchScreen.storyboard */,
+				187ABB8F1F1441D200722471 /* Info.plist */,
+				187ABB8E1F1441D200722471 /* GoogleService-Info.plist */,
+			);
+			name = Supporting;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		187ABB851F14413000722471 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				187ABB961F1447E400722471 /* Login.storyboard */,
+				187ABB8B1F1441B800722471 /* Main.storyboard */,
+				18DA3F701F155414007619E1 /* Location.storyboard */,
+				18DA3F721F155488007619E1 /* Choice.storyboard */,
+			);
+			name = Storyboards;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		187ABB861F14413800722471 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		187ABB871F14414000722471 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				187ABB701F1423E300722471 /* UBookIt.xcdatamodeld */,
+			);
+			name = Models;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		544C931189C22E23363F05FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42A224B956677BA648ACEEAE /* Pods_UBookIt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CDCD75A9939AAE955EEB50CF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7437B77AE645A4F1AE297CD /* Pods-UBookIt.debug.xcconfig */,
+				0B6957D9B80DC75F5234E6D8 /* Pods-UBookIt.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +185,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 187ABB7B1F1423E300722471 /* Build configuration list for PBXNativeTarget "UBookIt" */;
 			buildPhases = (
+				F5EA1D6EFE15DBBF21164BF1 /* [CP] Check Pods Manifest.lock */,
 				187ABB621F1423E300722471 /* Sources */,
 				187ABB631F1423E300722471 /* Frameworks */,
 				187ABB641F1423E300722471 /* Resources */,
+				8A2CEF3F3AA53C68E5D1EA57 /* [CP] Embed Pods Frameworks */,
+				432E43F1485B0DDE4C886A96 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,45 +240,105 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				187ABB771F1423E300722471 /* LaunchScreen.storyboard in Resources */,
 				187ABB741F1423E300722471 /* Assets.xcassets in Resources */,
-				187ABB6F1F1423E300722471 /* Main.storyboard in Resources */,
+				187ABB901F1441D200722471 /* GoogleService-Info.plist in Resources */,
+				18DA3F731F155488007619E1 /* Choice.storyboard in Resources */,
+				187ABB951F1445EC00722471 /* LaunchScreen.storyboard in Resources */,
+				18DA3F711F155414007619E1 /* Location.storyboard in Resources */,
+				187ABB971F1447E400722471 /* Login.storyboard in Resources */,
+				187ABB8D1F1441B800722471 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		432E43F1485B0DDE4C886A96 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UBookIt/Pods-UBookIt-resources.sh",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UBookIt/Pods-UBookIt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A2CEF3F3AA53C68E5D1EA57 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UBookIt/Pods-UBookIt-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UBookIt/Pods-UBookIt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5EA1D6EFE15DBBF21164BF1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UBookIt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		187ABB621F1423E300722471 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				187ABB6C1F1423E300722471 /* ViewController.swift in Sources */,
+				187ABB991F144A3100722471 /* LoginViewController.swift in Sources */,
+				187ABB891F14416B00722471 /* ViewController.swift in Sources */,
 				187ABB6A1F1423E300722471 /* AppDelegate.swift in Sources */,
 				187ABB721F1423E300722471 /* UBookIt.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		187ABB6D1F1423E300722471 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				187ABB6E1F1423E300722471 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		187ABB751F1423E300722471 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				187ABB761F1423E300722471 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		187ABB791F1423E300722471 /* Debug */ = {
@@ -262,9 +436,11 @@
 		};
 		187ABB7C1F1423E300722471 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7437B77AE645A4F1AE297CD /* Pods-UBookIt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = UBookIt/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/UBookIt/Supporting/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MakeSchool.UBookIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -274,9 +450,11 @@
 		};
 		187ABB7D1F1423E300722471 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B6957D9B80DC75F5234E6D8 /* Pods-UBookIt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = UBookIt/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/UBookIt/Supporting/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MakeSchool.UBookIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -303,6 +481,7 @@
 				187ABB7D1F1423E300722471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -313,7 +492,8 @@
 				187ABB711F1423E300722471 /* UBookIt.xcdatamodel */,
 			);
 			currentVersion = 187ABB711F1423E300722471 /* UBookIt.xcdatamodel */;
-			path = UBookIt.xcdatamodeld;
+			name = UBookIt.xcdatamodeld;
+			path = UBookIt/UBookIt.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

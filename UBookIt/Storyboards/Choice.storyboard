@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ReA-aQ-EUh">
+            <objects>
+                <viewController id="rto-BE-bnl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C0c-oi-XVb"/>
+                        <viewControllerLayoutGuide type="bottom" id="ebj-cA-HCf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FVN-Kq-NxB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ydc-Hq-KXP">
+                                <rect key="frame" x="112.5" y="158" width="150" height="130"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2h-bt-AUP">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.80259186029434204" blue="0.95350450277328491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="c38-5P-CJE"/>
+                                        </constraints>
+                                        <state key="normal" title="Buy Textbooks">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmt-2i-R9L">
+                                        <rect key="frame" x="0.0" y="50" width="150" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.80259186029434204" blue="0.95350450277328491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="y4p-aP-Abw"/>
+                                        </constraints>
+                                        <state key="normal" title="Sell Textbooks">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUw-Kw-hGR">
+                                        <rect key="frame" x="0.0" y="100" width="150" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.80259186029434204" blue="0.95350450277328491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="468-Vq-QFs"/>
+                                        </constraints>
+                                        <state key="normal" title="Rent textbooks">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvv-Qn-7bK">
+                                <rect key="frame" x="16" y="20" width="343" height="125"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want to... ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hN8-T1-DXu">
+                                        <rect key="frame" x="69" y="48" width="205.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.026049716398119926" green="0.70571935176849365" blue="0.9555472731590271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="hN8-T1-DXu" firstAttribute="centerY" secondItem="gvv-Qn-7bK" secondAttribute="centerY" id="4MO-zW-NtQ"/>
+                                    <constraint firstAttribute="height" constant="125" id="sub-Mq-ia8"/>
+                                    <constraint firstItem="hN8-T1-DXu" firstAttribute="centerX" secondItem="gvv-Qn-7bK" secondAttribute="centerX" id="sux-3r-QdY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gvv-Qn-7bK" firstAttribute="leading" secondItem="FVN-Kq-NxB" secondAttribute="leadingMargin" id="2en-8C-lBO"/>
+                            <constraint firstItem="Ydc-Hq-KXP" firstAttribute="centerX" secondItem="FVN-Kq-NxB" secondAttribute="centerX" id="589-UO-4uw"/>
+                            <constraint firstItem="Ydc-Hq-KXP" firstAttribute="top" secondItem="gvv-Qn-7bK" secondAttribute="bottom" constant="13" id="Q9Y-3r-Ens"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gvv-Qn-7bK" secondAttribute="trailing" id="TkF-kK-h2I"/>
+                            <constraint firstItem="gvv-Qn-7bK" firstAttribute="top" secondItem="C0c-oi-XVb" secondAttribute="bottom" id="ppV-KR-Buq"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HCz-xn-1fp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-119" y="-119"/>
+        </scene>
+    </scenes>
+</document>
