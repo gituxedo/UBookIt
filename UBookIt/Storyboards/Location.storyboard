@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CuN-4N-A62">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Location View Controller-->
+        <scene sceneID="KPJ-Vk-Kra">
+            <objects>
+                <viewController id="CuN-4N-A62" customClass="LocationViewController" customModule="UBookIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RIH-dg-4ae"/>
+                        <viewControllerLayoutGuide type="bottom" id="0LX-e1-Xfg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wPQ-MF-RA7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where are you from?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfB-4a-Px5">
+                                <rect key="frame" x="107.5" y="28" width="159.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4L-Kh-gze" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="67" width="375" height="533"/>
+                                <color key="backgroundColor" red="0.77301150560379028" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="Eav-m0-Ku0"/>
+                                    <constraint firstAttribute="height" constant="533" id="PPW-7w-HwV"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="google maps api goes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCT-iT-Roo">
+                                <rect key="frame" x="84" y="626" width="206.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="PCT-iT-Roo" firstAttribute="centerX" secondItem="wPQ-MF-RA7" secondAttribute="centerX" id="421-7e-hGI"/>
+                            <constraint firstItem="Z4L-Kh-gze" firstAttribute="centerX" secondItem="wPQ-MF-RA7" secondAttribute="centerX" id="94r-t7-Gge"/>
+                            <constraint firstItem="Z4L-Kh-gze" firstAttribute="centerY" secondItem="wPQ-MF-RA7" secondAttribute="centerY" id="Tma-Fu-SwL"/>
+                            <constraint firstItem="0LX-e1-Xfg" firstAttribute="top" secondItem="PCT-iT-Roo" secondAttribute="bottom" constant="20" id="WuQ-m8-O9f"/>
+                            <constraint firstItem="qfB-4a-Px5" firstAttribute="top" secondItem="RIH-dg-4ae" secondAttribute="bottom" constant="8" id="Z1v-Zn-O00"/>
+                            <constraint firstItem="qfB-4a-Px5" firstAttribute="centerX" secondItem="wPQ-MF-RA7" secondAttribute="centerX" id="xEe-tT-ygt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Z4L-Kh-gze" id="aSb-N8-c4r"/>
+                        <segue destination="qn9-N8-3GS" kind="show" identifier="toChoice" id="Dn9-OT-owZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m5o-rE-98s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="560.79999999999995" y="-91.304347826086968"/>
+        </scene>
+        <!--Choice-->
+        <scene sceneID="uWp-ze-Wf3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Choice" id="qn9-N8-3GS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZBr-9U-WkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1054" y="-92"/>
+        </scene>
+    </scenes>
+</document>

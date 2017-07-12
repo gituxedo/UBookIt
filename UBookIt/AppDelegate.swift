@@ -10,7 +10,8 @@ import UIKit
 import CoreData
 import Firebase
 import FirebaseAuthUI
-
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -38,6 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = initialViewController
             window?.makeKeyAndVisible()
         }
+        GMSServices.provideAPIKey("AIzaSyCl-zuIn0SxEDSM_3oWBf0u41NdwMsjue8")
+        GMSPlacesClient.provideAPIKey("AIzaSyCl-zuIn0SxEDSM_3oWBf0u41NdwMsjue8")
         return true
     }
 

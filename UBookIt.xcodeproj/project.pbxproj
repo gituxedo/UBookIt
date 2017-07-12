@@ -16,8 +16,16 @@
 		187ABB951F1445EC00722471 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB941F1445EC00722471 /* LaunchScreen.storyboard */; };
 		187ABB971F1447E400722471 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB961F1447E400722471 /* Login.storyboard */; };
 		187ABB991F144A3100722471 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABB981F144A3100722471 /* LoginViewController.swift */; };
-		18DA3F711F155414007619E1 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DA3F701F155414007619E1 /* Location.storyboard */; };
-		18DA3F731F155488007619E1 /* Choice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DA3F721F155488007619E1 /* Choice.storyboard */; };
+		18DA3F751F157E6D007619E1 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F741F157E6D007619E1 /* LocationViewController.swift */; };
+		18DA3F771F158B41007619E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F761F158B41007619E1 /* User.swift */; };
+		18DA3F7B1F158E7A007619E1 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DA3F7A1F158E7A007619E1 /* Location.storyboard */; };
+		18DA3F7D1F1690A1007619E1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F7C1F1690A1007619E1 /* UserService.swift */; };
+		18DA3F7F1F169B7E007619E1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F7E1F169B7E007619E1 /* Constants.swift */; };
+		18DA3F811F16A530007619E1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F801F16A530007619E1 /* SearchViewController.swift */; };
+		18DA3F831F16C005007619E1 /* ListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F821F16C005007619E1 /* ListingService.swift */; };
+		18DA3F851F16C33E007619E1 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F841F16C33E007619E1 /* Listing.swift */; };
+		18DA3F871F16C369007619E1 /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F861F16C369007619E1 /* ListingViewController.swift */; };
+		18DA3F8B1F16C974007619E1 /* Choice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DA3F8A1F16C974007619E1 /* Choice.storyboard */; };
 		AA9E3D8E58F13B8583E2BC43 /* Pods_UBookIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A224B956677BA648ACEEAE /* Pods_UBookIt.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,8 +42,16 @@
 		187ABB941F1445EC00722471 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = UBookIt/Supporting/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		187ABB961F1447E400722471 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = UBookIt/Storyboards/Login.storyboard; sourceTree = "<group>"; };
 		187ABB981F144A3100722471 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = UBookIt/Controllers/LoginViewController.swift; sourceTree = "<group>"; };
-		18DA3F701F155414007619E1 /* Location.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Location.storyboard; path = UBookIt/Storyboards/Location.storyboard; sourceTree = "<group>"; };
-		18DA3F721F155488007619E1 /* Choice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Choice.storyboard; path = UBookIt/Storyboards/Choice.storyboard; sourceTree = "<group>"; };
+		18DA3F741F157E6D007619E1 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationViewController.swift; path = UBookIt/Controllers/LocationViewController.swift; sourceTree = "<group>"; };
+		18DA3F761F158B41007619E1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = UBookIt/Models/User.swift; sourceTree = "<group>"; };
+		18DA3F7A1F158E7A007619E1 /* Location.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Location.storyboard; path = UBookIt/Storyboards/Location.storyboard; sourceTree = "<group>"; };
+		18DA3F7C1F1690A1007619E1 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = UBookIt/Services/UserService.swift; sourceTree = "<group>"; };
+		18DA3F7E1F169B7E007619E1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = UBookIt/Supporting/Constants.swift; sourceTree = "<group>"; };
+		18DA3F801F16A530007619E1 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = UBookIt/Controllers/SearchViewController.swift; sourceTree = "<group>"; };
+		18DA3F821F16C005007619E1 /* ListingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingService.swift; path = UBookIt/Services/ListingService.swift; sourceTree = "<group>"; };
+		18DA3F841F16C33E007619E1 /* Listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Listing.swift; path = UBookIt/Models/Listing.swift; sourceTree = "<group>"; };
+		18DA3F861F16C369007619E1 /* ListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingViewController.swift; path = UBookIt/Controllers/ListingViewController.swift; sourceTree = "<group>"; };
+		18DA3F8A1F16C974007619E1 /* Choice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Choice.storyboard; path = UBookIt/Storyboards/Choice.storyboard; sourceTree = "<group>"; };
 		42A224B956677BA648ACEEAE /* Pods_UBookIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UBookIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7437B77AE645A4F1AE297CD /* Pods-UBookIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBookIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UBookIt/Pods-UBookIt.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,7 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				187ABB881F14416B00722471 /* ViewController.swift */,
+				18DA3F801F16A530007619E1 /* SearchViewController.swift */,
 				187ABB981F144A3100722471 /* LoginViewController.swift */,
+				18DA3F741F157E6D007619E1 /* LocationViewController.swift */,
+				18DA3F861F16C369007619E1 /* ListingViewController.swift */,
 			);
 			name = "View Controllers";
 			path = ..;
@@ -125,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				187ABB941F1445EC00722471 /* LaunchScreen.storyboard */,
+				18DA3F7E1F169B7E007619E1 /* Constants.swift */,
 				187ABB8F1F1441D200722471 /* Info.plist */,
 				187ABB8E1F1441D200722471 /* GoogleService-Info.plist */,
 			);
@@ -136,9 +156,9 @@
 			isa = PBXGroup;
 			children = (
 				187ABB961F1447E400722471 /* Login.storyboard */,
+				18DA3F7A1F158E7A007619E1 /* Location.storyboard */,
+				18DA3F8A1F16C974007619E1 /* Choice.storyboard */,
 				187ABB8B1F1441B800722471 /* Main.storyboard */,
-				18DA3F701F155414007619E1 /* Location.storyboard */,
-				18DA3F721F155488007619E1 /* Choice.storyboard */,
 			);
 			name = Storyboards;
 			path = ..;
@@ -147,6 +167,8 @@
 		187ABB861F14413800722471 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				18DA3F7C1F1690A1007619E1 /* UserService.swift */,
+				18DA3F821F16C005007619E1 /* ListingService.swift */,
 			);
 			name = Services;
 			path = ..;
@@ -156,6 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				187ABB701F1423E300722471 /* UBookIt.xcdatamodeld */,
+				18DA3F761F158B41007619E1 /* User.swift */,
+				18DA3F841F16C33E007619E1 /* Listing.swift */,
 			);
 			name = Models;
 			path = ..;
@@ -242,9 +266,9 @@
 			files = (
 				187ABB741F1423E300722471 /* Assets.xcassets in Resources */,
 				187ABB901F1441D200722471 /* GoogleService-Info.plist in Resources */,
-				18DA3F731F155488007619E1 /* Choice.storyboard in Resources */,
+				18DA3F8B1F16C974007619E1 /* Choice.storyboard in Resources */,
 				187ABB951F1445EC00722471 /* LaunchScreen.storyboard in Resources */,
-				18DA3F711F155414007619E1 /* Location.storyboard in Resources */,
+				18DA3F7B1F158E7A007619E1 /* Location.storyboard in Resources */,
 				187ABB971F1447E400722471 /* Login.storyboard in Resources */,
 				187ABB8D1F1441B800722471 /* Main.storyboard in Resources */,
 			);
@@ -263,6 +287,8 @@
 				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
 				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle,
 				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -281,6 +307,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-UBookIt/Pods-UBookIt-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -292,6 +319,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -331,10 +359,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DA3F831F16C005007619E1 /* ListingService.swift in Sources */,
+				18DA3F7D1F1690A1007619E1 /* UserService.swift in Sources */,
+				18DA3F751F157E6D007619E1 /* LocationViewController.swift in Sources */,
+				18DA3F871F16C369007619E1 /* ListingViewController.swift in Sources */,
+				18DA3F851F16C33E007619E1 /* Listing.swift in Sources */,
 				187ABB991F144A3100722471 /* LoginViewController.swift in Sources */,
+				18DA3F811F16A530007619E1 /* SearchViewController.swift in Sources */,
+				18DA3F771F158B41007619E1 /* User.swift in Sources */,
 				187ABB891F14416B00722471 /* ViewController.swift in Sources */,
 				187ABB6A1F1423E300722471 /* AppDelegate.swift in Sources */,
 				187ABB721F1423E300722471 /* UBookIt.xcdatamodeld in Sources */,
+				18DA3F7F1F169B7E007619E1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

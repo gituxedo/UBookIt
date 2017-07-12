@@ -62,6 +62,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="Esu-h1-0bV" eventType="touchUpInside" id="2Kr-ee-7w9"/>
+                                    <segue destination="dTi-ey-NLh" kind="show" identifier="toLocation" id="Aeu-I9-Cye"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -78,6 +79,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rqm-IG-YlK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-215.19999999999999" y="-91.304347826086968"/>
+        </scene>
+        <!--Location-->
+        <scene sceneID="cYQ-eU-iUi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Location" id="dTi-ey-NLh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HJi-t1-R7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="562" y="-91"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="ggI-TU-oYm">
+            <objects>
+                <viewController title="Search" id="AoI-sl-1ql" customClass="SearchViewController" customModule="UBookIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ka8-fI-26C"/>
+                        <viewControllerLayoutGuide type="bottom" id="iXt-3t-Ix7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Ni-ME-ZUL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Enter Location here" translatesAutoresizingMaskIntoConstraints="NO" id="X83-aa-JjB">
+                                <rect key="frame" x="0.0" y="40" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Vk-c3-tqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620" y="296"/>
         </scene>
     </scenes>
 </document>
