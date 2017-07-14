@@ -21,12 +21,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where are you from?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfB-4a-Px5">
-                                <rect key="frame" x="107.5" y="28" width="159.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4L-Kh-gze" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="67" width="375" height="533"/>
                                 <color key="backgroundColor" red="0.77301150560379028" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,6 +35,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qqz-6W-WVu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Where are you from?" id="xoz-eH-nKh">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="pum-Ao-T4g">
+                                            <connections>
+                                                <segue destination="qn9-N8-3GS" kind="show" identifier="toChoice" id="zsw-Bk-jy9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -48,13 +55,10 @@
                             <constraint firstItem="Z4L-Kh-gze" firstAttribute="centerX" secondItem="wPQ-MF-RA7" secondAttribute="centerX" id="94r-t7-Gge"/>
                             <constraint firstItem="Z4L-Kh-gze" firstAttribute="centerY" secondItem="wPQ-MF-RA7" secondAttribute="centerY" id="Tma-Fu-SwL"/>
                             <constraint firstItem="0LX-e1-Xfg" firstAttribute="top" secondItem="PCT-iT-Roo" secondAttribute="bottom" constant="20" id="WuQ-m8-O9f"/>
-                            <constraint firstItem="qfB-4a-Px5" firstAttribute="top" secondItem="RIH-dg-4ae" secondAttribute="bottom" constant="8" id="Z1v-Zn-O00"/>
-                            <constraint firstItem="qfB-4a-Px5" firstAttribute="centerX" secondItem="wPQ-MF-RA7" secondAttribute="centerX" id="xEe-tT-ygt"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="Z4L-Kh-gze" id="aSb-N8-c4r"/>
-                        <segue destination="qn9-N8-3GS" kind="show" identifier="toChoice" id="Dn9-OT-owZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5o-rE-98s" userLabel="First Responder" sceneMemberID="firstResponder"/>

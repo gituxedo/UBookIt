@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Choice-->
+        <!--View Controller-->
         <scene sceneID="6BA-Ct-n8K">
             <objects>
-                <viewController title="Choice" id="Y9b-6j-dZj" sceneMemberID="viewController">
+                <viewController id="Y9b-6j-dZj" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dkm-hL-iv3"/>
                         <viewControllerLayoutGuide type="bottom" id="4D4-UK-K6y"/>
@@ -112,7 +112,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LD9-PF-I0N" userLabel="Super Stack View">
-                                <rect key="frame" x="10" y="84" width="355" height="423.5"/>
+                                <rect key="frame" x="10" y="90.5" width="355" height="423.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7zn-ah-xX3">
                                         <rect key="frame" x="0.0" y="0.0" width="344" height="30"/>
@@ -239,18 +239,28 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Book Listing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVH-XF-7db">
-                                <rect key="frame" x="121" y="28" width="133" height="20.5"/>
+                                <rect key="frame" x="121" y="50" width="133" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tAK-r9-SWR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="qpB-e6-TAr">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="GXH-wL-zcK"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Post" id="Jv6-lC-0gH"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="RRd-XL-Tax" secondAttribute="trailing" id="BYi-e4-F5E"/>
-                            <constraint firstItem="LD9-PF-I0N" firstAttribute="top" secondItem="WVH-XF-7db" secondAttribute="bottom" constant="35.5" id="JFf-b5-Q3G"/>
+                            <constraint firstItem="LD9-PF-I0N" firstAttribute="top" secondItem="WVH-XF-7db" secondAttribute="bottom" constant="20" id="JFf-b5-Q3G"/>
                             <constraint firstItem="LD9-PF-I0N" firstAttribute="centerX" secondItem="UKf-h9-jPf" secondAttribute="centerX" id="TL8-fN-x4s"/>
-                            <constraint firstItem="WVH-XF-7db" firstAttribute="top" secondItem="gLr-Zf-kyN" secondAttribute="bottom" constant="8" id="bOQ-V0-2tA"/>
+                            <constraint firstItem="WVH-XF-7db" firstAttribute="top" secondItem="gLr-Zf-kyN" secondAttribute="bottom" constant="30" id="bOQ-V0-2tA"/>
                             <constraint firstItem="WVH-XF-7db" firstAttribute="centerX" secondItem="UKf-h9-jPf" secondAttribute="centerX" id="gqg-GU-63E"/>
                         </constraints>
                     </view>
@@ -265,12 +275,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUm-YX-tim" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2002" y="309"/>
+            <point key="canvasLocation" x="2001" y="269"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Book-->
         <scene sceneID="D24-ZC-DEL">
             <objects>
-                <viewController id="Xt4-eq-0RO" sceneMemberID="viewController">
+                <viewController title="Search Book" id="Xt4-eq-0RO" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CRz-RU-zx7"/>
                         <viewControllerLayoutGuide type="bottom" id="JTF-3J-xMr"/>

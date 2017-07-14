@@ -11,9 +11,12 @@ import Foundation
 struct Constants {
     struct Segue {
         static let toLocation = "toLocation"
+        static let toZip = "toZip"
     }
     struct UserDefaults {
         static let currentUser = "currentUser"
         static let uid = "uid"
+        static let zip = "zip"
+        static let name = "name"
     }
 }

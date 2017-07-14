@@ -46,25 +46,22 @@ extension LoginViewController: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
         if let error = error {
             assertionFailure("Error signing in: \(error.localizedDescription)")
-            return
         }
-        if let user = Auth.auth().currentUser {
-            //handle existing user
-            let userRef = Database.database().reference().child("users").child(user.uid)
-            userRef.observeSingleEvent(of: .value, with: { (snapshot) in
-                if let user = User(snapshot: snapshot) {
-                    print("Welcome back, \(user.name).")
-                } else {
-                    print("New user!")
-                    self.performSegue(withIdentifier: "toLocation", sender: self)
+        guard let user = user
+            else {return}
+        UserService.show(forUID: user.uid) {(user) in
+            if let user = user {
+                //handle existing user
+                User.setCurrent(user, writeToUserDefaults: true)
+                let storyboard = UIStoryboard(name: "Choice", bundle: .choice)
+                if let initialViewController = storyboard.instantiateInitialViewController() {
+                    self.view.window?.rootViewController = initialViewController
+                    self.view.window?.makeKeyAndVisible()
                 }
-            })
-//            let initialViewController = UIStoryboard.initialViewController(for: .main)
-//            self.view.window?.rootViewController = initialViewController
-//            self.view.window?.makeKeyAndVisible()
-        } else {
-            //handle new user
-            self.performSegue(withIdentifier: "toLocation", sender: self)
+            } else {
+                //handle new user
+                self.performSegue(withIdentifier: "toZip", sender: self)
+            }
         }
     }
 }

@@ -9,23 +9,24 @@
 /* Begin PBXBuildFile section */
 		187ABB6A1F1423E300722471 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABB691F1423E300722471 /* AppDelegate.swift */; };
 		187ABB721F1423E300722471 /* UBookIt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 187ABB701F1423E300722471 /* UBookIt.xcdatamodeld */; };
-		187ABB741F1423E300722471 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB731F1423E300722471 /* Assets.xcassets */; };
 		187ABB891F14416B00722471 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABB881F14416B00722471 /* ViewController.swift */; };
-		187ABB8D1F1441B800722471 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB8B1F1441B800722471 /* Main.storyboard */; };
-		187ABB901F1441D200722471 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB8E1F1441D200722471 /* GoogleService-Info.plist */; };
-		187ABB951F1445EC00722471 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB941F1445EC00722471 /* LaunchScreen.storyboard */; };
-		187ABB971F1447E400722471 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB961F1447E400722471 /* Login.storyboard */; };
 		187ABB991F144A3100722471 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABB981F144A3100722471 /* LoginViewController.swift */; };
 		18DA3F751F157E6D007619E1 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F741F157E6D007619E1 /* LocationViewController.swift */; };
 		18DA3F771F158B41007619E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F761F158B41007619E1 /* User.swift */; };
-		18DA3F7B1F158E7A007619E1 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DA3F7A1F158E7A007619E1 /* Location.storyboard */; };
 		18DA3F7D1F1690A1007619E1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F7C1F1690A1007619E1 /* UserService.swift */; };
 		18DA3F7F1F169B7E007619E1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F7E1F169B7E007619E1 /* Constants.swift */; };
 		18DA3F811F16A530007619E1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F801F16A530007619E1 /* SearchViewController.swift */; };
 		18DA3F831F16C005007619E1 /* ListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F821F16C005007619E1 /* ListingService.swift */; };
 		18DA3F851F16C33E007619E1 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F841F16C33E007619E1 /* Listing.swift */; };
 		18DA3F871F16C369007619E1 /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F861F16C369007619E1 /* ListingViewController.swift */; };
-		18DA3F8B1F16C974007619E1 /* Choice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DA3F8A1F16C974007619E1 /* Choice.storyboard */; };
+		18DA3F8D1F16E74F007619E1 /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F8C1F16E74F007619E1 /* Storyboard+Utility.swift */; };
+		18DA3F8F1F17EA25007619E1 /* ZipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F8E1F17EA25007619E1 /* ZipViewController.swift */; };
+		18DA3F921F19233A007619E1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB961F1447E400722471 /* Login.storyboard */; };
+		18DA3F931F19233A007619E1 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DA3F7A1F158E7A007619E1 /* Location.storyboard */; };
+		18DA3F941F19233A007619E1 /* Choice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DA3F8A1F16C974007619E1 /* Choice.storyboard */; };
+		18DA3F951F19233A007619E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB8B1F1441B800722471 /* Main.storyboard */; };
+		18DA3F961F19233E007619E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB731F1423E300722471 /* Assets.xcassets */; };
+		18DA3F971F192345007619E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB8E1F1441D200722471 /* GoogleService-Info.plist */; };
 		AA9E3D8E58F13B8583E2BC43 /* Pods_UBookIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A224B956677BA648ACEEAE /* Pods_UBookIt.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,8 @@
 		18DA3F841F16C33E007619E1 /* Listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Listing.swift; path = UBookIt/Models/Listing.swift; sourceTree = "<group>"; };
 		18DA3F861F16C369007619E1 /* ListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingViewController.swift; path = UBookIt/Controllers/ListingViewController.swift; sourceTree = "<group>"; };
 		18DA3F8A1F16C974007619E1 /* Choice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Choice.storyboard; path = UBookIt/Storyboards/Choice.storyboard; sourceTree = "<group>"; };
+		18DA3F8C1F16E74F007619E1 /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Storyboard+Utility.swift"; path = "UBookIt/Extensions/Storyboard+Utility.swift"; sourceTree = "<group>"; };
+		18DA3F8E1F17EA25007619E1 /* ZipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZipViewController.swift; path = UBookIt/Controllers/ZipViewController.swift; sourceTree = "<group>"; };
 		42A224B956677BA648ACEEAE /* Pods_UBookIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UBookIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7437B77AE645A4F1AE297CD /* Pods-UBookIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBookIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UBookIt/Pods-UBookIt.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +113,7 @@
 				18DA3F801F16A530007619E1 /* SearchViewController.swift */,
 				187ABB981F144A3100722471 /* LoginViewController.swift */,
 				18DA3F741F157E6D007619E1 /* LocationViewController.swift */,
+				18DA3F8E1F17EA25007619E1 /* ZipViewController.swift */,
 				18DA3F861F16C369007619E1 /* ListingViewController.swift */,
 			);
 			name = "View Controllers";
@@ -119,6 +123,7 @@
 		187ABB811F14411400722471 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				18DA3F8C1F16E74F007619E1 /* Storyboard+Utility.swift */,
 			);
 			name = Extensions;
 			path = ..;
@@ -264,13 +269,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				187ABB741F1423E300722471 /* Assets.xcassets in Resources */,
-				187ABB901F1441D200722471 /* GoogleService-Info.plist in Resources */,
-				18DA3F8B1F16C974007619E1 /* Choice.storyboard in Resources */,
-				187ABB951F1445EC00722471 /* LaunchScreen.storyboard in Resources */,
-				18DA3F7B1F158E7A007619E1 /* Location.storyboard in Resources */,
-				187ABB971F1447E400722471 /* Login.storyboard in Resources */,
-				187ABB8D1F1441B800722471 /* Main.storyboard in Resources */,
+				18DA3F971F192345007619E1 /* GoogleService-Info.plist in Resources */,
+				18DA3F961F19233E007619E1 /* Assets.xcassets in Resources */,
+				18DA3F921F19233A007619E1 /* Login.storyboard in Resources */,
+				18DA3F931F19233A007619E1 /* Location.storyboard in Resources */,
+				18DA3F941F19233A007619E1 /* Choice.storyboard in Resources */,
+				18DA3F951F19233A007619E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,10 +369,12 @@
 				18DA3F871F16C369007619E1 /* ListingViewController.swift in Sources */,
 				18DA3F851F16C33E007619E1 /* Listing.swift in Sources */,
 				187ABB991F144A3100722471 /* LoginViewController.swift in Sources */,
+				18DA3F8F1F17EA25007619E1 /* ZipViewController.swift in Sources */,
 				18DA3F811F16A530007619E1 /* SearchViewController.swift in Sources */,
 				18DA3F771F158B41007619E1 /* User.swift in Sources */,
 				187ABB891F14416B00722471 /* ViewController.swift in Sources */,
 				187ABB6A1F1423E300722471 /* AppDelegate.swift in Sources */,
+				18DA3F8D1F16E74F007619E1 /* Storyboard+Utility.swift in Sources */,
 				187ABB721F1423E300722471 /* UBookIt.xcdatamodeld in Sources */,
 				18DA3F7F1F169B7E007619E1 /* Constants.swift in Sources */,
 			);

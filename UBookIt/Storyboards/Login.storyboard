@@ -62,7 +62,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="Esu-h1-0bV" eventType="touchUpInside" id="2Kr-ee-7w9"/>
-                                    <segue destination="dTi-ey-NLh" kind="show" identifier="toLocation" id="Aeu-I9-Cye"/>
+                                    <segue destination="XqQ-Ar-zHI" kind="show" identifier="toZip" id="rpa-7O-6Xg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -80,38 +80,75 @@
             </objects>
             <point key="canvasLocation" x="-215.19999999999999" y="-91.304347826086968"/>
         </scene>
+        <!--Choice-->
+        <scene sceneID="H4G-AF-tbq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Choice" referencedIdentifier="Choice" id="Qat-E8-G7v" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KpP-zs-B5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="521" y="290"/>
+        </scene>
         <!--Location-->
         <scene sceneID="cYQ-eU-iUi">
             <objects>
                 <viewControllerPlaceholder storyboardName="Location" id="dTi-ey-NLh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJi-t1-R7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="562" y="-91"/>
+            <point key="canvasLocation" x="520" y="361"/>
         </scene>
-        <!--Search-->
-        <scene sceneID="ggI-TU-oYm">
+        <!--Zip View Controller-->
+        <scene sceneID="tw6-sH-IEH">
             <objects>
-                <viewController title="Search" id="AoI-sl-1ql" customClass="SearchViewController" customModule="UBookIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Zip Code" id="XqQ-Ar-zHI" customClass="ZipViewController" customModule="UBookIt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ka8-fI-26C"/>
-                        <viewControllerLayoutGuide type="bottom" id="iXt-3t-Ix7"/>
+                        <viewControllerLayoutGuide type="top" id="4zG-2A-uTZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="XiX-PQ-IDh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1Ni-ME-ZUL">
+                    <view key="view" contentMode="scaleToFill" id="MvW-cc-3qa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Enter Location here" translatesAutoresizingMaskIntoConstraints="NO" id="X83-aa-JjB">
-                                <rect key="frame" x="0.0" y="40" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your zip code?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQ3-gc-q6o">
+                                <rect key="frame" x="101" y="73" width="173.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ALz-vy-y1t">
+                                <rect key="frame" x="112.5" y="318.5" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="HTn-nP-03N"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </searchBar>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVq-iN-iVO">
+                                <rect key="frame" x="168.5" y="356" width="37" height="30"/>
+                                <state key="normal" title="Enter"/>
+                                <connections>
+                                    <action selector="enterButtonTapped:" destination="XqQ-Ar-zHI" eventType="touchUpInside" id="GGs-Dj-YCO"/>
+                                    <segue destination="Qat-E8-G7v" kind="show" id="6DV-gA-4HH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NVq-iN-iVO" firstAttribute="centerX" secondItem="MvW-cc-3qa" secondAttribute="centerX" id="49N-zy-BhR"/>
+                            <constraint firstItem="UQ3-gc-q6o" firstAttribute="top" secondItem="4zG-2A-uTZ" secondAttribute="bottom" constant="53" id="NlW-RY-8DP"/>
+                            <constraint firstItem="ALz-vy-y1t" firstAttribute="centerX" secondItem="MvW-cc-3qa" secondAttribute="centerX" id="a3Q-Y7-9pZ"/>
+                            <constraint firstItem="UQ3-gc-q6o" firstAttribute="centerX" secondItem="MvW-cc-3qa" secondAttribute="centerX" id="aGd-Xw-R9s"/>
+                            <constraint firstItem="XiX-PQ-IDh" firstAttribute="top" secondItem="NVq-iN-iVO" secondAttribute="bottom" constant="281" id="b7O-Xj-KAU"/>
+                            <constraint firstItem="ALz-vy-y1t" firstAttribute="centerY" secondItem="MvW-cc-3qa" secondAttribute="centerY" id="y1Y-Qh-tPy"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="zipTextField" destination="ALz-vy-y1t" id="JWz-4g-NFz"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Vk-c3-tqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kb3-79-aUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="296"/>
+            <point key="canvasLocation" x="521" y="-91"/>
         </scene>
     </scenes>
 </document>

@@ -16,13 +16,13 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, GMSMa
     
     @IBOutlet var mapView: GMSMapView!
     var locationManager = CLLocationManager()
+    var marker = GMSMarker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Create a GMSCameraPosition that tells the map to display -33.86,151.20 at zoom level 6.
         let camera = GMSCameraPosition.camera(withLatitude: 37.3814183, longitude: -121.9582519, zoom: 11.0)
-        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        self.view = mapView
+        mapView = GMSMapView.map(withFrame: CGRect(x: 80, y: 67, width: 300, height: 400), camera: camera)
         if (CLLocationManager.locationServicesEnabled()) {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
@@ -30,12 +30,6 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, GMSMa
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
         }
-        // Creates a marker in the center of the map.
-//        let marker = GMSMarker()
-//        marker.position = CLLocationCoordinate2D(latitude: 37.3814183, longitude: -121.9582519)
-//        marker.title = "Hacker Dojo"
-//        marker.snippet = "Santa Clara, CA"
-//        marker.map = mapView
         
         let position = CLLocationCoordinate2D(latitude: 37.5515778, longitude: -121.9536696)
         let marker2 = GMSMarker(position: position)
@@ -55,12 +49,17 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, GMSMa
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let newLocation = locations.last
-        mapView.camera = GMSCameraPosition.camera(withTarget: newLocation!.coordinate, zoom: 15.0)
+        mapView.camera = GMSCameraPosition.camera(withTarget: newLocation!.coordinate, zoom: 13.0)
         mapView.settings.myLocationButton = true
         self.view = self.mapView
-        let marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(newLocation!.coordinate.latitude, newLocation!.coordinate.longitude)
-        marker.icon = GMSMarker.markerImage(with: .black)
+        updateMarker(currentLocation: newLocation!)
+    }
+    
+    func updateMarker(currentLocation: CLLocation) {
+        marker.map = nil
+        marker = GMSMarker(position: currentLocation.coordinate)
+        marker.icon = GMSMarker.markerImage(with: .cyan)
         marker.map = self.mapView
     }
 }
