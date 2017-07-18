@@ -18,6 +18,16 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var editionTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var extraNotesTextView: UITextView!
+    @IBAction func doneButtonTapped(_ sender: UIButton) {
+        ListingService.create(title: titleTextField.text!, author: authorTextField.text!, condition: pickerData[conditionPicker.selectedRow(inComponent: 0)], edition: editionTextField.text!, price: Double(priceTextField.text!)!, extra: extraNotesTextView.text)
+    }
+    
+    @IBAction func postListing(_ segue: UIStoryboardSegue) {
+        if segue.identifier == "post" {
+            ListingService.create(title: titleTextField.text!, author: authorTextField.text!, condition: pickerData[conditionPicker.selectedRow(inComponent: 0)], edition: editionTextField.text!, price: Double(priceTextField.text!)!, extra: extraNotesTextView.text)
+            print("posted")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,4 +56,5 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
+    
 }

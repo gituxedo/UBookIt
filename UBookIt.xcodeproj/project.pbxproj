@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18149FFB1F1D22E500A36E5C /* ListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18149FFA1F1D22E500A36E5C /* ListingCell.swift */; };
 		187ABB6A1F1423E300722471 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABB691F1423E300722471 /* AppDelegate.swift */; };
 		187ABB721F1423E300722471 /* UBookIt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 187ABB701F1423E300722471 /* UBookIt.xcdatamodeld */; };
 		187ABB891F14416B00722471 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABB881F14416B00722471 /* ViewController.swift */; };
@@ -27,11 +28,13 @@
 		18DA3F951F19233A007619E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB8B1F1441B800722471 /* Main.storyboard */; };
 		18DA3F961F19233E007619E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB731F1423E300722471 /* Assets.xcassets */; };
 		18DA3F971F192345007619E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB8E1F1441D200722471 /* GoogleService-Info.plist */; };
+		18DA3F9B1F192B56007619E1 /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F9A1F192B56007619E1 /* ChoiceViewController.swift */; };
 		AA9E3D8E58F13B8583E2BC43 /* Pods_UBookIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A224B956677BA648ACEEAE /* Pods_UBookIt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B6957D9B80DC75F5234E6D8 /* Pods-UBookIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBookIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-UBookIt/Pods-UBookIt.release.xcconfig"; sourceTree = "<group>"; };
+		18149FFA1F1D22E500A36E5C /* ListingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingCell.swift; path = UBookIt/Views/ListingCell.swift; sourceTree = "<group>"; };
 		187ABB661F1423E300722471 /* UBookIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UBookIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		187ABB691F1423E300722471 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		187ABB711F1423E300722471 /* UBookIt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UBookIt.xcdatamodel; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		18DA3F8A1F16C974007619E1 /* Choice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Choice.storyboard; path = UBookIt/Storyboards/Choice.storyboard; sourceTree = "<group>"; };
 		18DA3F8C1F16E74F007619E1 /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Storyboard+Utility.swift"; path = "UBookIt/Extensions/Storyboard+Utility.swift"; sourceTree = "<group>"; };
 		18DA3F8E1F17EA25007619E1 /* ZipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZipViewController.swift; path = UBookIt/Controllers/ZipViewController.swift; sourceTree = "<group>"; };
+		18DA3F9A1F192B56007619E1 /* ChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoiceViewController.swift; path = UBookIt/Controllers/ChoiceViewController.swift; sourceTree = "<group>"; };
 		42A224B956677BA648ACEEAE /* Pods_UBookIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UBookIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7437B77AE645A4F1AE297CD /* Pods-UBookIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBookIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UBookIt/Pods-UBookIt.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +119,7 @@
 				18DA3F741F157E6D007619E1 /* LocationViewController.swift */,
 				18DA3F8E1F17EA25007619E1 /* ZipViewController.swift */,
 				18DA3F861F16C369007619E1 /* ListingViewController.swift */,
+				18DA3F9A1F192B56007619E1 /* ChoiceViewController.swift */,
 			);
 			name = "View Controllers";
 			path = ..;
@@ -140,6 +145,7 @@
 		187ABB831F14412000722471 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				18149FFA1F1D22E500A36E5C /* ListingCell.swift */,
 			);
 			name = Views;
 			path = ..;
@@ -369,12 +375,14 @@
 				18DA3F871F16C369007619E1 /* ListingViewController.swift in Sources */,
 				18DA3F851F16C33E007619E1 /* Listing.swift in Sources */,
 				187ABB991F144A3100722471 /* LoginViewController.swift in Sources */,
+				18149FFB1F1D22E500A36E5C /* ListingCell.swift in Sources */,
 				18DA3F8F1F17EA25007619E1 /* ZipViewController.swift in Sources */,
 				18DA3F811F16A530007619E1 /* SearchViewController.swift in Sources */,
 				18DA3F771F158B41007619E1 /* User.swift in Sources */,
 				187ABB891F14416B00722471 /* ViewController.swift in Sources */,
 				187ABB6A1F1423E300722471 /* AppDelegate.swift in Sources */,
 				18DA3F8D1F16E74F007619E1 /* Storyboard+Utility.swift in Sources */,
+				18DA3F9B1F192B56007619E1 /* ChoiceViewController.swift in Sources */,
 				187ABB721F1423E300722471 /* UBookIt.xcdatamodeld in Sources */,
 				18DA3F7F1F169B7E007619E1 /* Constants.swift in Sources */,
 			);

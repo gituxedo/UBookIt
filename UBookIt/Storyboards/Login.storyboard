@@ -83,7 +83,7 @@
         <!--Choice-->
         <scene sceneID="H4G-AF-tbq">
             <objects>
-                <viewControllerPlaceholder storyboardName="Choice" referencedIdentifier="Choice" id="Qat-E8-G7v" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Choice" storyboardName="Choice" bundleIdentifier="com.MakeSchool.UBookIt" referencedIdentifier="Choice" id="Qat-E8-G7v" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KpP-zs-B5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="521" y="290"/>
@@ -128,7 +128,7 @@
                                 <state key="normal" title="Enter"/>
                                 <connections>
                                     <action selector="enterButtonTapped:" destination="XqQ-Ar-zHI" eventType="touchUpInside" id="GGs-Dj-YCO"/>
-                                    <segue destination="Qat-E8-G7v" kind="show" id="6DV-gA-4HH"/>
+                                    <segue destination="Qat-E8-G7v" kind="show" identifier="toChoice" id="6DV-gA-4HH"/>
                                 </connections>
                             </button>
                         </subviews>

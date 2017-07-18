@@ -33,17 +33,19 @@ class Listing:UKeyed {
                 "condition" : condition,
                 "edition" : edition,
                 "price" : price,
+                "extra" : extra ?? "",
                 "created_at" : createdAgo,
                 "poster" : userDict]
     }
     
-    init(title:String, author:String, condition:String, edition:String, price:Double) {
+    init(title:String, author:String, condition:String, edition:String, price:Double, extra: String?) {
         self.title = title
         self.author = author
         self.condition = condition
         self.edition = edition
         self.price = price
         self.poster = User.current
+        self.extra = extra ?? ""
         self.creationDate = Date()
         
     }
@@ -58,7 +60,8 @@ class Listing:UKeyed {
             let createdAgo = dict["created_at"] as? TimeInterval,
             let userDict = dict["poster"] as? [String:Any],
             let uid = userDict["uid"] as? String,
-            let zip = userDict["zip"] as? String
+            let zip = userDict["zip"] as? String,
+            let extra = dict["extra"] as? String?
         else {return nil}
         
         self.title = title
@@ -68,5 +71,6 @@ class Listing:UKeyed {
         self.price = price
         self.creationDate = Date(timeIntervalSince1970: createdAgo)
         self.poster = User(uid: uid, zip: zip)
+        self.extra = extra ?? ""
     }
 }

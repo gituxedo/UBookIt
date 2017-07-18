@@ -39,7 +39,7 @@ class User:NSObject {
     init?(snapshot: DataSnapshot) {
         guard let dict = snapshot.value as? [String : Any],
 //            let name = dict["name"] as? String,
-            let zip = dict["zip"] as? String
+            let zip = dict["zipcode"] as? String
             else { return nil }
         
         self.uid = snapshot.key
@@ -80,3 +80,4 @@ extension User: NSCoding {
         aCoder.encode(zip, forKey: Constants.UserDefaults.zip)
     }
 }
+
