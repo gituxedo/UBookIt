@@ -64,6 +64,7 @@ class Listing:UKeyed {
             let extra = dict["extra"] as? String?
         else {return nil}
         
+        self.key = snapshot.key
         self.title = title
         self.author = author
         self.condition = condition

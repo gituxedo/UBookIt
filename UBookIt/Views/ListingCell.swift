@@ -18,6 +18,7 @@ class ListingCell:UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBAction func buyButton(_ sender: UIButton) {
         //send to PM/SMS text screen
+        print("I want to buy \(titleLabel.text ?? "") for $\(priceLabel.text ?? "")!")
     }
     
     override func awakeFromNib() {

@@ -18,8 +18,25 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var editionTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var extraNotesTextView: UITextView!
+    
     @IBAction func doneButtonTapped(_ sender: UIButton) {
-        ListingService.create(title: titleTextField.text!, author: authorTextField.text!, condition: pickerData[conditionPicker.selectedRow(inComponent: 0)], edition: editionTextField.text!, price: Double(priceTextField.text!)!, extra: extraNotesTextView.text)
+        
+        guard let title = titleTextField.text,
+            let author = authorTextField.text,
+            let edition = editionTextField.text,
+            let price = Double(priceTextField.text!) else {
+                let fillPopup = UIAlertController(title: "Cannot post", message: "Please fill in all fields!", preferredStyle: .alert)
+                let ok = UIAlertAction.init(title: "OK", style: .cancel, handler: { (action) in
+                    print("tapped \(action.title!)")
+                })
+                fillPopup.addAction(ok)
+                self.present(fillPopup, animated: true, completion: {
+                    return
+                })
+                return
+        }
+                    
+        ListingService.create(title: title, author: author, condition: pickerData[conditionPicker.selectedRow(inComponent: 0)], edition: edition, price: price, extra: extraNotesTextView.text)
     }
     
     @IBAction func postListing(_ segue: UIStoryboardSegue) {

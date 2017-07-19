@@ -8,17 +8,29 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabase
 
 class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
     
     @IBOutlet weak var bookTableView: UITableView!
+    var zip:String = User.current.zip
     var listings:[Listing] = []
+    //firebase_node.once('value', function(snapshot) { alert('Count: ' + snapshot.numChildren()); });
+
+//    for 0..<Database.database().reference().child("zipcodes").child(zip).numChildren()
     var titles:[String] = []
     var bookSearchResults:Array<String>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.bookTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+                self.bookTableView.delegate = self
+                self.bookTableView.dataSource = self
+        UserService.posts(user: User.current) { (listings) in
+            self.listings = listings
+            self.bookTableView.reloadData()
+            print("listings: \(listings)")
+            
+        }
     }
     
     func filterContentForSearchText(searchText: String) {
@@ -47,24 +59,24 @@ class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDel
 }
 
 extension SearchViewController:UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(listings.count)
         return listings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:ListingCell = tableView.dequeueReusableCell(withIdentifier: "cell")! as! ListingCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListingCell
         configureCell(cell: cell, listing: listings[indexPath.row])
         
         return cell
     }
     
     func configureCell(cell:ListingCell, listing:Listing) {
-        cell.titleLabel.text = "Title: " + listing.title
+        cell.titleLabel.text = listing.title.capitalized
         cell.conditionLabel.text = "Condition: "+listing.condition
         cell.editionLabel.text = "Edition: " + listing.edition
-        cell.priceLabel.text = "Price: " + String(listing.price)
-        
+        cell.priceLabel.text = "Price: \n $" + String(format: "%.2f", listing.price)
     }
 }
 
