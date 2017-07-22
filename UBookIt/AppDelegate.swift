@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String?
         if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {
@@ -26,19 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // other URL handling goes here
-        
         return false
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-//        let storyboard = UIStoryboard(name: "Login", bundle: .main)
-//        
-//        if let initialViewController = storyboard.instantiateInitialViewController() {
-//            window?.rootViewController = initialViewController
-//            window?.makeKeyAndVisible()
-//        }
         configureInitialRootViewController(for: window)
         GMSServices.provideAPIKey("AIzaSyCl-zuIn0SxEDSM_3oWBf0u41NdwMsjue8")
         GMSPlacesClient.provideAPIKey("AIzaSyCl-zuIn0SxEDSM_3oWBf0u41NdwMsjue8")
@@ -127,7 +119,6 @@ extension AppDelegate {
             User.setCurrent(user)
             
             initialViewController = UIStoryboard.initialViewController(for: .Choice)
-
         } else {
             initialViewController = UIStoryboard.initialViewController(for: .Login)
         }

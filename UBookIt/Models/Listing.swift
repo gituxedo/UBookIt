@@ -23,6 +23,7 @@ class Listing:UKeyed {
     let condition: String
     let edition: String
     let price: Double
+    let imgURL: String
     var extra: String?
     var dictValue: [String : Any] {
         let createdAgo = creationDate.timeIntervalSince1970
@@ -34,17 +35,19 @@ class Listing:UKeyed {
                 "edition" : edition,
                 "price" : price,
                 "extra" : extra ?? "",
+                "imageURL" : imgURL,
                 "created_at" : createdAgo,
                 "poster" : userDict]
     }
     
-    init(title:String, author:String, condition:String, edition:String, price:Double, extra: String?) {
+    init(title:String, author:String, condition:String, edition:String, price:Double, imageURL:String, extra: String?) {
         self.title = title
         self.author = author
         self.condition = condition
         self.edition = edition
         self.price = price
         self.poster = User.current
+        self.imgURL = imageURL
         self.extra = extra ?? ""
         self.creationDate = Date()
         
@@ -57,6 +60,7 @@ class Listing:UKeyed {
             let condition = dict["condition"] as? String,
             let edition = dict["edition"] as? String,
             let price = dict["price"] as? Double,
+            let imageURL = dict["imageURL"] as? String,
             let createdAgo = dict["created_at"] as? TimeInterval,
             let userDict = dict["poster"] as? [String:Any],
             let uid = userDict["uid"] as? String,
@@ -69,6 +73,7 @@ class Listing:UKeyed {
         self.author = author
         self.condition = condition
         self.edition = edition
+        self.imgURL = imageURL
         self.price = price
         self.creationDate = Date(timeIntervalSince1970: createdAgo)
         self.poster = User(uid: uid, zip: zip)

@@ -20,6 +20,7 @@ target 'UBookIt' do
   
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-  pod 'Alamofire'
+#  pod 'Alamofire'
+  pod 'Kingfisher', '~> 3.0'
 
 end

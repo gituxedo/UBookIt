@@ -83,7 +83,7 @@
         <!--Choice-->
         <scene sceneID="H4G-AF-tbq">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Choice" storyboardName="Choice" bundleIdentifier="com.MakeSchool.UBookIt" referencedIdentifier="Choice" id="Qat-E8-G7v" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Choice" bundleIdentifier="com.MakeSchool.UBookIt" id="Qat-E8-G7v" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KpP-zs-B5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="521" y="290"/>

@@ -14,7 +14,7 @@ import FirebaseDatabase
 struct UserService {
     
     static func posts(user: User, completion: @escaping ([Listing]) -> Void) {
-        let ref = Database.database().reference().child("listings").child(user.uid)
+        let ref = Database.database().reference().child("zipcodes").child(user.zip)
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return completion([])}
             let listings:[Listing] = snapshot.reversed().flatMap {

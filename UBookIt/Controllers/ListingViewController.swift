@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
-class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var imagePicker = UIImagePickerController()
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var authorTextField: UITextField!
@@ -19,13 +21,27 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var extraNotesTextView: UITextView!
     
-    @IBAction func doneButtonTapped(_ sender: UIButton) {
+    @IBAction func uploadPhotoTapped(_ sender: UIButton) {
         
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.cameraCaptureMode = .photo
+            present(imagePicker, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Camera Not Found", message: "This device has no Camera", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style:.default, handler: nil)
+            alert.addAction(ok)
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    @IBAction func doneButtonTapped(_ sender: UIButton) {
         guard let title = titleTextField.text,
             let author = authorTextField.text,
             let edition = editionTextField.text,
             let price = Double(priceTextField.text!) else {
-                let fillPopup = UIAlertController(title: "Cannot post", message: "Please fill in all fields!", preferredStyle: .alert)
+                let fillPopup = UIAlertController(title: "Cannot post", message: "Please complete all fields!", preferredStyle: .alert)
                 let ok = UIAlertAction.init(title: "OK", style: .cancel, handler: { (action) in
                     print("tapped \(action.title!)")
                 })
@@ -36,12 +52,16 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
                 return
         }
                     
-        ListingService.create(title: title, author: author, condition: pickerData[conditionPicker.selectedRow(inComponent: 0)], edition: edition, price: price, extra: extraNotesTextView.text)
+        ListingService.create(title: title, author: author, condition: pickerData[conditionPicker.selectedRow(inComponent: 0)], edition: edition, price: price, imgURL: "", extra: extraNotesTextView.text)
+    }
+    
+    @IBAction func unwindToSearchViewController(_ segue: UIStoryboardSegue) {
+        performSegue(withIdentifier: "toSearch", sender: self)
     }
     
     @IBAction func postListing(_ segue: UIStoryboardSegue) {
         if segue.identifier == "post" {
-            ListingService.create(title: titleTextField.text!, author: authorTextField.text!, condition: pickerData[conditionPicker.selectedRow(inComponent: 0)], edition: editionTextField.text!, price: Double(priceTextField.text!)!, extra: extraNotesTextView.text)
+            ListingService.create(title: titleTextField.text!, author: authorTextField.text!, condition: pickerData[conditionPicker.selectedRow(inComponent: 0)], edition: editionTextField.text!, price: Double(priceTextField.text!)!, imgURL: "", extra: extraNotesTextView.text)
             print("posted")
         }
     }
@@ -51,12 +71,7 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         self.conditionPicker.delegate = self
         self.conditionPicker.dataSource = self
         pickerData = ["Perfect", "Like New", "Good", "Fair", "Poor"]
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        imagePicker.delegate = self
     }
     
     // The number of columns of data

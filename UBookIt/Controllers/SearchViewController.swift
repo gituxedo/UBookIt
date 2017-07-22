@@ -9,22 +9,23 @@
 import Foundation
 import UIKit
 import FirebaseDatabase
+import Kingfisher
 
 class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
     
     @IBOutlet weak var bookTableView: UITableView!
     var zip:String = User.current.zip
     var listings:[Listing] = []
-    //firebase_node.once('value', function(snapshot) { alert('Count: ' + snapshot.numChildren()); });
-
-//    for 0..<Database.database().reference().child("zipcodes").child(zip).numChildren()
-    var titles:[String] = []
     var bookSearchResults:Array<String>?
+    
+    @IBAction func unwindToSearchViewController(_ segue: UIStoryboardSegue) {
+        //only declaration is needed
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                self.bookTableView.delegate = self
-                self.bookTableView.dataSource = self
+            self.bookTableView.delegate = self
+            self.bookTableView.dataSource = self
         UserService.posts(user: User.current) { (listings) in
             self.listings = listings
             self.bookTableView.reloadData()
@@ -33,20 +34,31 @@ class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDel
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let id = segue.identifier {
+            if id == "detail" {
+                let indexPath = bookTableView.indexPathForSelectedRow!
+                let detailViewController = segue.destination as! DetailViewController
+                detailViewController.listing = listings[indexPath.row]
+            }
+        }
+    }
+    
     func filterContentForSearchText(searchText: String) {
-        // Filter the array using the filter method
+        // Filter the array using filter method
 //        if self.listings == nil {
 //            self.bookSearchResults = nil
 //            return
 //        }
 //        self.bookSearchResults = self.listings.filter({(aBook: String) -> Bool in
-//            // to start, let's just search by name
+//            // to start, search by name
 //            return aBook.range(of: searchText.lowercased()) != nil
 //        })
     }
   
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You selected cell #\(indexPath.row)!")
+        self.performSegue(withIdentifier: "detail", sender: self)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -61,7 +73,6 @@ class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDel
 extension SearchViewController:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(listings.count)
         return listings.count
     }
     

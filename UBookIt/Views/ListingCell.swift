@@ -24,7 +24,4 @@ class ListingCell:UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    
-    
 }
