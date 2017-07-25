@@ -22,6 +22,12 @@ class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDel
         //only declaration is needed
     }
     
+    @IBAction func postListing(_ segue: UIStoryboardSegue) {
+        //declaration here
+        //postListing in other class does nothing
+        //save lsiting to firebase here
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
             self.bookTableView.delegate = self
