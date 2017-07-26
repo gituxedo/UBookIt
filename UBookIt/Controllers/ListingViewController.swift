@@ -14,6 +14,7 @@ import FirebaseDatabase
 class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let photoHelper = PhotoHelper()
+    var imgURL = ""
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var authorTextField: UITextField!
@@ -22,6 +23,7 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var editionTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var extraNotesTextView: UITextView!
+    @IBOutlet weak var bookImageView: UIImageView!
     
     @IBAction func uploadPhotoTapped(_ sender: UIButton) {
             photoHelper.presentActionSheet(from: self)
@@ -30,7 +32,9 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         guard let title = titleTextField.text,
             let author = authorTextField.text,
             let edition = editionTextField.text,
-            let price = Double(priceTextField.text!) else {
+            let price = Double(priceTextField.text!)
+        
+            else {
                 let fillPopup = UIAlertController(title: "Cannot post", message: "Please complete all fields!", preferredStyle: .alert)
                 let ok = UIAlertAction.init(title: "OK", style: .cancel, handler: { (action) in
                     print("tapped \(action.title!)")
@@ -39,8 +43,9 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
                 self.present(fillPopup, animated: true, completion: {return})
                 return
             }
-                    
-        ListingService.create(title: title, author: author, condition: pickerData[conditionPicker.selectedRow(inComponent: 0)], edition: edition, price: price, imgURL: "", extra: extraNotesTextView.text)
+        
+        ListingService.create(title: title, author: author, condition: pickerData[conditionPicker.selectedRow(inComponent: 0)], edition: edition, price: price, imgURL: imgURL, extra: extraNotesTextView.text)
+        print("imgURL: \(imgURL)")
     }
     
     @IBAction func unwindToSearchViewController(_ segue: UIStoryboardSegue) {
@@ -72,18 +77,18 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         pickerData = ["Perfect", "Like New", "Good", "Fair", "Poor"]
         self.hideKeyboard()
         photoHelper.completionHandler = {(image) in
+            
             StorageService.uploadImage(image, at: StorageReference.newPostImageReference(), completion: { (downloadURL) in
                 guard let downloadURL = downloadURL else {return}
                 let urlString = downloadURL.absoluteString
-                
-                print("imgURL: \(urlString)")
+                self.imgURL = urlString
+                self.bookImageView.image = image
             })
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        conditionPicker.selectRow(1, inComponent: 0, animated: false)
     }
     
     // The number of columns of data
@@ -99,6 +104,19 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var pickerLabel = view as? UILabel
+        if pickerLabel == nil {
+            pickerLabel = UILabel()
+            pickerLabel?.font = UIFont(name: "System", size: 16)
+            pickerLabel?.textAlignment = .center
+        }
+        pickerLabel?.text = pickerData[row]
+        pickerLabel?.textColor = UIColor.black
+        
+        return pickerLabel!
     }
     
 }

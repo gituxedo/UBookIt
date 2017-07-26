@@ -15,7 +15,7 @@ struct ListingService {
     //make private func??????
     static func create(title:String, author:String, condition:String, edition:String, price:Double, imgURL:String, extra:String?) {
         let currentUser = User.current
-        let listing = Listing(title:title, author:author, condition:condition, edition:edition, price:price, imageURL: "", extra:extra)
+        let listing = Listing(title:title, author:author, condition:condition, edition:edition, price:price, imageURL: imgURL, extra:extra)
         let listRef = Database.database().reference().child("listings").child(currentUser.uid).childByAutoId()
         let dict = listing.dictValue
         listRef.setValue(dict)

@@ -90,6 +90,8 @@ extension SearchViewController:UITableViewDataSource {
     }
     
     func configureCell(cell:ListingCell, listing:Listing) {
+        let imageURL = URL(string: listing.imgURL)
+        cell.bookImageView.kf.setImage(with: imageURL)
         cell.titleLabel.text = listing.title.capitalized
         cell.conditionLabel.text = "Condition: "+listing.condition
         cell.editionLabel.text = "Edition: " + listing.edition

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class DetailViewController: UIViewController {
     
@@ -17,17 +18,20 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var editionLabel: UILabel!
     @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var extraLabel: UILabel!
+    @IBOutlet weak var bookLargeImageView: UIImageView!
     
     var listing:Listing?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         priceLabel.text = "$" + String(format: "%.2f", (listing?.price)!)
-        titleLabel.text = listing?.title
+        titleLabel.text = listing?.title.capitalized
         authorLabel.text = listing?.author
         editionLabel.text = listing?.edition
         conditionLabel.text = listing?.condition
         extraLabel.text = listing?.extra ?? "None"
+        let imageURL = URL(string: (listing?.imgURL)!)
+        bookLargeImageView.kf.setImage(with: imageURL)
         
 //        UserService.posts(user: User.current) { (listing) in
 //            self.listing = listing
