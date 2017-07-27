@@ -11,7 +11,7 @@ import UIKit
 import FirebaseDatabase
 import Kingfisher
 
-class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UISearchControllerDelegate, UISearchResultsUpdating {
+class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating {
     
     @IBOutlet weak var bookTableView: UITableView!
 //    var zip:String = User.current.zip
@@ -32,38 +32,27 @@ class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            self.bookTableView.delegate = self
-            self.bookTableView.dataSource = self
+
+        self.bookTableView.delegate = self
+        self.bookTableView.dataSource = self
         UserService.posts(user: User.current) { (listings) in
             SearchViewController.listings = listings
             self.bookTableView.reloadData()
             print("listings: \(listings)")
             
+            self.configureSearchController()
         }
-        configureSearchController()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let id = segue.identifier {
-            if id == "detail" {
-                let indexPath = bookTableView.indexPathForSelectedRow!
-                let detailViewController = segue.destination as! DetailViewController
-                detailViewController.listing = SearchViewController.listings[indexPath.row]
-            }
+        let listing:Listing
+        if (segue.identifier != nil) && segue.identifier == "detail" {
+            let indexPath = bookTableView.indexPathForSelectedRow!
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.listing = SearchViewController.listings[indexPath.row]
         }
     }
     
-    
-//    func filterContentForSearchText(searchText: String) {
-//        // Filter the array using filter method
-//        if SearchViewController.listings == nil {
-//            self.bookSearchResults = nil
-//            return
-//        }
-//        self.bookSearchResults = SearchViewController.listings.filter({(book:Listing) -> Bool in
-//            return book.title.lowercased().range(of:searchText.lowercased()) != nil
-//        })
-//    }
     //MARK: - tableView methods
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You selected cell #\(indexPath.row)!")
@@ -77,35 +66,33 @@ class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDel
             cell.backgroundColor = .white
         }
     }
+
     //MARK: - searchBar methods
-//    func searchDisplayController(_ controller: UISearchDisplayController, shouldReloadTableForSearch searchString: String?) -> Bool {
-//        self.filterContentForSearchText(searchText: searchString ?? "")
-//        return true
-//    }
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
+    
+    func updateSearchResults(for searchController: UISearchController) {
         let searchString = searchController.searchBar.text
         // Filter the array
         self.bookSearchResults = SearchViewController.listings.filter({(book:Listing) -> Bool in
+            print(searchString ?? "foo")
             return book.title.lowercased().range(of: (searchString?.lowercased())!) != nil
         })
         bookTableView.reloadData()
-    }
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        
     }
     
     func configureSearchController() {
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
         searchController.searchBar.placeholder = "Search for titles here..."
         searchController.searchBar.delegate = self
-        searchController.searchBar.sizeToFit()
-        bookTableView.tableFooterView = searchController.searchBar
-        
+//        searchController.searchBar.sizeToFit()
+        bookTableView.tableHeaderView = searchController.searchBar
     }
     
+//    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+//        shouldShowResults = false
+//    }
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         shouldShowResults = true
         bookTableView.reloadData()
@@ -118,14 +105,13 @@ class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDel
         if !shouldShowResults {
             shouldShowResults = true
             bookTableView.reloadData()
-        }; searchController.searchBar.resignFirstResponder()
+        }
     }
 }
 
 extension SearchViewController:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if tableView == self.searchDisplayController!.searchResultsTableView {
         if shouldShowResults {
             return bookSearchResults?.count ?? 0
         } else {
@@ -135,18 +121,13 @@ extension SearchViewController:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListingCell
-//        if tableView == self.searchDisplayController!.searchResultsTableView {
-//            arrayOfBooks = self.bookSearchResults
-//        } else {
-//            arrayOfBooks = SearchViewController.listings
-//        }
         if shouldShowResults {
+            print ("booksearchResults: \(indexPath.row)")
             configureCell(cell: cell, listing: (bookSearchResults?[indexPath.row])!)
         } else {
+            print ("listings: \(indexPath.row)")
             configureCell(cell: cell, listing: SearchViewController.listings[indexPath.row])
         }
-//        configureCell(cell: cell, listing: listings[indexPath.row])
-        
         return cell
     }
     
