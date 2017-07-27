@@ -14,66 +14,62 @@ import Kingfisher
 class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating {
     
     @IBOutlet weak var bookTableView: UITableView!
-//    var zip:String = User.current.zip
+    
     static var listings:[Listing] = []
     var bookSearchResults:[Listing]?
     var shouldShowResults = false
     var searchController: UISearchController!
     
     @IBAction func unwindToSearchViewController(_ segue: UIStoryboardSegue) {
-        //only declaration is needed
     }
     
-    @IBAction func postListing(_ segue: UIStoryboardSegue) {
-        //declaration here
-        //postListing in other class does nothing
-        //save listing to firebase here
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.bookTableView.delegate = self
         self.bookTableView.dataSource = self
         UserService.posts(user: User.current) { (listings) in
             SearchViewController.listings = listings
             self.bookTableView.reloadData()
             print("listings: \(listings)")
-            
             self.configureSearchController()
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let listing:Listing
-        if (segue.identifier != nil) && segue.identifier == "detail" {
-            let indexPath = bookTableView.indexPathForSelectedRow!
-            let detailViewController = segue.destination as! DetailViewController
-            detailViewController.listing = SearchViewController.listings[indexPath.row]
+        if let id = segue.identifier {
+            if id == "detail" {
+                let indexPath = bookTableView.indexPathForSelectedRow!
+                let listing:Listing
+                if searchController.isActive && searchController.searchBar.text != "" {
+                    listing = (bookSearchResults?[indexPath.row])!
+                } else {
+                    listing = SearchViewController.listings[indexPath.row]
+                }
+                let detailViewController = segue.destination as! DetailViewController
+                detailViewController.listing = listing
+                detailViewController.navigationItem.leftItemsSupplementBackButton = true
+            }
         }
     }
     
-    //MARK: - tableView methods
+    //MARK: - Table View
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You selected cell #\(indexPath.row)!")
         self.performSegue(withIdentifier: "detail", sender: self)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row % 2 == 0 {
             cell.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.0)
-        } else {
-            cell.backgroundColor = .white
-        }
+        }; cell.backgroundColor = .white
     }
 
-    //MARK: - searchBar methods
+    //MARK: - Search Bar
     
     func updateSearchResults(for searchController: UISearchController) {
         let searchString = searchController.searchBar.text
         // Filter the array
         self.bookSearchResults = SearchViewController.listings.filter({(book:Listing) -> Bool in
-            print(searchString ?? "foo")
             return book.title.lowercased().range(of: (searchString?.lowercased())!) != nil
         })
         bookTableView.reloadData()
@@ -90,9 +86,6 @@ class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDel
         bookTableView.tableHeaderView = searchController.searchBar
     }
     
-//    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-//        shouldShowResults = false
-//    }
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         shouldShowResults = true
         bookTableView.reloadData()
@@ -125,7 +118,6 @@ extension SearchViewController:UITableViewDataSource {
             print ("booksearchResults: \(indexPath.row)")
             configureCell(cell: cell, listing: (bookSearchResults?[indexPath.row])!)
         } else {
-            print ("listings: \(indexPath.row)")
             configureCell(cell: cell, listing: SearchViewController.listings[indexPath.row])
         }
         return cell
@@ -137,8 +129,7 @@ extension SearchViewController:UITableViewDataSource {
         cell.titleLabel.text = listing.title.capitalized
         cell.conditionLabel.text = "Condition: "+listing.condition
         cell.editionLabel.text = "Edition: " + listing.edition
-        cell.priceLabel.text = "Price: \n $" + String(format: "%.2f", listing.price)
+        cell.priceLabel.text = "Price: \n$" + String(format: "%.2f", listing.price)
     }
-    
 }
 

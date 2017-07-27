@@ -25,6 +25,37 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var extraNotesTextView: UITextView!
     @IBOutlet weak var bookImageView: UIImageView!
     
+    
+    @IBAction func postButtonTapped(_ sender: UIBarButtonItem) {
+        let confirmPopup = UIAlertController(title: "Post", message: "Are you sure you want to post this listing?", preferredStyle: .alert)
+        let ok = UIAlertAction.init(title: "Yes", style: .default) { (action) in
+            print("posted: \(action.title!)")
+            guard let title = titleTextField.text,
+                let author = authorTextField.text,
+                let edition = editionTextField.text,
+                let price = Double(priceTextField.text!)
+                
+                else {
+                    let fillPopup = UIAlertController(title: "Cannot post", message: "Please complete all fields!", preferredStyle: .alert)
+                    let ok = UIAlertAction.init(title: "OK", style: .cancel, handler: { (action) in
+                        print("tapped \(action.title!)")
+                    })
+                    fillPopup.addAction(ok)
+                    self.present(fillPopup, animated: true, completion: {return})
+                    return
+            }
+            
+            ListingService.create(title: title, author: author, condition: pickerData[conditionPicker.selectedRow(inComponent: 0)], edition: edition, price: price, imgURL: imgURL, extra: extraNotesTextView.text)
+            print("imgURL: \(imgURL)")
+        }
+        let cancel = UIAlertAction.init(title: "Cancel", style: .cancel, handler: { (action) in
+            print("tapped \(action.title!)")
+        })
+        confirmPopup.addAction(cancel)
+        confirmPopup.addAction(ok)
+        self.present(confirmPopup, animated: true, completion: {return})
+        return
+    }
     @IBAction func uploadPhotoTapped(_ sender: UIButton) {
             photoHelper.presentActionSheet(from: self)
     }
@@ -50,24 +81,6 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     @IBAction func unwindToSearchViewController(_ segue: UIStoryboardSegue) {
         performSegue(withIdentifier: "toSearch", sender: self)
-    }
-    
-    @IBAction func postListing(_ segue: UIStoryboardSegue) {
-        guard let title = titleTextField.text,
-            let author = authorTextField.text,
-            let edition = editionTextField.text,
-            let price = Double(priceTextField.text!) else {
-                let fillPopup = UIAlertController(title: "Cannot post", message: "Please complete all fields!", preferredStyle: .alert)
-                let ok = UIAlertAction.init(title: "OK", style: .cancel, handler: { (action) in
-                    print("tapped \(action.title!)")
-                })
-                fillPopup.addAction(ok)
-                self.present(fillPopup, animated: true, completion: {return})
-                return
-            }
-        ListingService.create(title: title, author: author, condition: pickerData[conditionPicker.selectedRow(inComponent: 0)], edition: edition, price: price, imgURL: "", extra: extraNotesTextView.text)
-        performSegue(withIdentifier: "post", sender: self)
-        print("posted \(titleTextField.text ?? "")")
     }
     
     override func viewDidLoad() {
