@@ -11,12 +11,14 @@ import UIKit
 import FirebaseDatabase
 import Kingfisher
 
-class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
+class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UISearchControllerDelegate, UISearchResultsUpdating {
     
     @IBOutlet weak var bookTableView: UITableView!
-    var zip:String = User.current.zip
-    var listings:[Listing] = []
-    var bookSearchResults:Array<String>?
+//    var zip:String = User.current.zip
+    static var listings:[Listing] = []
+    var bookSearchResults:[Listing]?
+    var shouldShowResults = false
+    var searchController: UISearchController!
     
     @IBAction func unwindToSearchViewController(_ segue: UIStoryboardSegue) {
         //only declaration is needed
@@ -25,7 +27,7 @@ class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDel
     @IBAction func postListing(_ segue: UIStoryboardSegue) {
         //declaration here
         //postListing in other class does nothing
-        //save lsiting to firebase here
+        //save listing to firebase here
     }
     
     override func viewDidLoad() {
@@ -33,11 +35,12 @@ class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDel
             self.bookTableView.delegate = self
             self.bookTableView.dataSource = self
         UserService.posts(user: User.current) { (listings) in
-            self.listings = listings
+            SearchViewController.listings = listings
             self.bookTableView.reloadData()
             print("listings: \(listings)")
             
         }
+        configureSearchController()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,23 +48,23 @@ class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDel
             if id == "detail" {
                 let indexPath = bookTableView.indexPathForSelectedRow!
                 let detailViewController = segue.destination as! DetailViewController
-                detailViewController.listing = listings[indexPath.row]
+                detailViewController.listing = SearchViewController.listings[indexPath.row]
             }
         }
     }
     
-    func filterContentForSearchText(searchText: String) {
-        // Filter the array using filter method
-//        if self.listings == nil {
+    
+//    func filterContentForSearchText(searchText: String) {
+//        // Filter the array using filter method
+//        if SearchViewController.listings == nil {
 //            self.bookSearchResults = nil
 //            return
 //        }
-//        self.bookSearchResults = self.listings.filter({(aBook: String) -> Bool in
-//            // to start, search by name
-//            return aBook.range(of: searchText.lowercased()) != nil
+//        self.bookSearchResults = SearchViewController.listings.filter({(book:Listing) -> Bool in
+//            return book.title.lowercased().range(of:searchText.lowercased()) != nil
 //        })
-    }
-  
+//    }
+    //MARK: - tableView methods
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You selected cell #\(indexPath.row)!")
         self.performSegue(withIdentifier: "detail", sender: self)
@@ -74,17 +77,75 @@ class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDel
             cell.backgroundColor = .white
         }
     }
+    //MARK: - searchBar methods
+//    func searchDisplayController(_ controller: UISearchDisplayController, shouldReloadTableForSearch searchString: String?) -> Bool {
+//        self.filterContentForSearchText(searchText: searchString ?? "")
+//        return true
+//    }
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchString = searchController.searchBar.text
+        // Filter the array
+        self.bookSearchResults = SearchViewController.listings.filter({(book:Listing) -> Bool in
+            return book.title.lowercased().range(of: (searchString?.lowercased())!) != nil
+        })
+        bookTableView.reloadData()
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+    
+    func configureSearchController() {
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search for titles here..."
+        searchController.searchBar.delegate = self
+        searchController.searchBar.sizeToFit()
+        bookTableView.tableFooterView = searchController.searchBar
+        
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        shouldShowResults = true
+        bookTableView.reloadData()
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        shouldShowResults = false
+        bookTableView.reloadData()
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if !shouldShowResults {
+            shouldShowResults = true
+            bookTableView.reloadData()
+        }; searchController.searchBar.resignFirstResponder()
+    }
 }
 
 extension SearchViewController:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listings.count
+//        if tableView == self.searchDisplayController!.searchResultsTableView {
+        if shouldShowResults {
+            return bookSearchResults?.count ?? 0
+        } else {
+            return SearchViewController.listings.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListingCell
-        configureCell(cell: cell, listing: listings[indexPath.row])
+//        if tableView == self.searchDisplayController!.searchResultsTableView {
+//            arrayOfBooks = self.bookSearchResults
+//        } else {
+//            arrayOfBooks = SearchViewController.listings
+//        }
+        if shouldShowResults {
+            configureCell(cell: cell, listing: (bookSearchResults?[indexPath.row])!)
+        } else {
+            configureCell(cell: cell, listing: SearchViewController.listings[indexPath.row])
+        }
+//        configureCell(cell: cell, listing: listings[indexPath.row])
         
         return cell
     }
@@ -97,5 +158,6 @@ extension SearchViewController:UITableViewDataSource {
         cell.editionLabel.text = "Edition: " + listing.edition
         cell.priceLabel.text = "Price: \n $" + String(format: "%.2f", listing.price)
     }
+    
 }
 
