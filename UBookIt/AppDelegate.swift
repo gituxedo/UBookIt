@@ -12,6 +12,7 @@ import Firebase
 import FirebaseAuthUI
 import GoogleMaps
 import GooglePlaces
+import SendBirdSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         configureInitialRootViewController(for: window)
+        SBDMain.initWithApplicationId("C0E4A62A-D5C5-4B80-862D-47B99B776CFF")
         GMSServices.provideAPIKey("AIzaSyCl-zuIn0SxEDSM_3oWBf0u41NdwMsjue8")
         GMSPlacesClient.provideAPIKey("AIzaSyCl-zuIn0SxEDSM_3oWBf0u41NdwMsjue8")
         return true

@@ -12,6 +12,8 @@ struct Constants {
     struct Segue {
         static let toLocation = "toLocation"
         static let toZip = "toZip"
+        static let toDetail = "detail"
+        static let toChat = "toChat"
     }
     struct UserDefaults {
         static let currentUser = "currentUser"

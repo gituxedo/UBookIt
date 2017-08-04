@@ -14,13 +14,15 @@ target 'UBookIt' do
   pod 'FirebaseUI/Facebook'
   pod 'FacebookCore'
   pod 'FacebookLogin'
+  pod 'Firebase/Messaging'
   
   pod 'FirebaseUI/Google'
   pod 'GoogleSignIn'
   
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-#  pod 'Alamofire'
   pod 'Kingfisher', '~> 3.0'
+  
+  pod 'SendBirdSDK'
 
 end

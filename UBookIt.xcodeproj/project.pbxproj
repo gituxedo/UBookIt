@@ -14,9 +14,19 @@
 		187ABB721F1423E300722471 /* UBookIt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 187ABB701F1423E300722471 /* UBookIt.xcdatamodeld */; };
 		187ABB891F14416B00722471 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABB881F14416B00722471 /* ViewController.swift */; };
 		187ABB991F144A3100722471 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABB981F144A3100722471 /* LoginViewController.swift */; };
+		18BB94051F32540A001D824E /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB94041F32540A001D824E /* Chat.swift */; };
+		18BB94091F3254FE001D824E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB94081F3254FE001D824E /* Message.swift */; };
+		18BB940B1F325742001D824E /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB940A1F325742001D824E /* ChatService.swift */; };
+		18BB940D1F338F9F001D824E /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB940C1F338F9F001D824E /* ChatListViewController.swift */; };
+		18BB940F1F339650001D824E /* ChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB940E1F339650001D824E /* ChatListCell.swift */; };
+		18BB94111F33A0CF001D824E /* NewChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB94101F33A0CF001D824E /* NewChatViewController.swift */; };
+		18BB94131F33A95B001D824E /* NewChatUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB94121F33A95B001D824E /* NewChatUserCell.swift */; };
 		18CDF3781F2268E000825999 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CDF3771F2268E000825999 /* StorageService.swift */; };
 		18CDF37A1F227D1800825999 /* StorageRef+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CDF3791F227D1800825999 /* StorageRef+Post.swift */; };
 		18CDF37C1F22822F00825999 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CDF37B1F22822F00825999 /* UIImage+Size.swift */; };
+		18CDF37E1F2BA14F00825999 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CDF37D1F2BA14F00825999 /* Chat.storyboard */; };
+		18CDF4951F31366900825999 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CDF47E1F31366900825999 /* ChatViewController.swift */; };
+		18CDF4AC1F315ACD00825999 /* Pods_UBookIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CDF4AB1F315ACD00825999 /* Pods_UBookIt.framework */; };
 		18DA3F751F157E6D007619E1 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F741F157E6D007619E1 /* LocationViewController.swift */; };
 		18DA3F771F158B41007619E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F761F158B41007619E1 /* User.swift */; };
 		18DA3F7D1F1690A1007619E1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F7C1F1690A1007619E1 /* UserService.swift */; };
@@ -34,7 +44,7 @@
 		18DA3F961F19233E007619E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB731F1423E300722471 /* Assets.xcassets */; };
 		18DA3F971F192345007619E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB8E1F1441D200722471 /* GoogleService-Info.plist */; };
 		18DA3F9B1F192B56007619E1 /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F9A1F192B56007619E1 /* ChoiceViewController.swift */; };
-		AA9E3D8E58F13B8583E2BC43 /* Pods_UBookIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A224B956677BA648ACEEAE /* Pods_UBookIt.framework */; };
+		EA66F1240A1DC01306D3A49D /* Pods_UBookIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A224B956677BA648ACEEAE /* Pods_UBookIt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,9 +63,21 @@
 		187ABB941F1445EC00722471 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = UBookIt/Supporting/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		187ABB961F1447E400722471 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = UBookIt/Storyboards/Login.storyboard; sourceTree = "<group>"; };
 		187ABB981F144A3100722471 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = UBookIt/Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		18BB94041F32540A001D824E /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Chat.swift; path = UBookIt/Models/Chat.swift; sourceTree = "<group>"; };
+		18BB94081F3254FE001D824E /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = UBookIt/Models/Message.swift; sourceTree = "<group>"; };
+		18BB940A1F325742001D824E /* ChatService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatService.swift; path = UBookIt/Services/ChatService.swift; sourceTree = "<group>"; };
+		18BB940C1F338F9F001D824E /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatListViewController.swift; path = UBookIt/Controllers/ChatListViewController.swift; sourceTree = "<group>"; };
+		18BB940E1F339650001D824E /* ChatListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatListCell.swift; path = UBookIt/Views/ChatListCell.swift; sourceTree = "<group>"; };
+		18BB94101F33A0CF001D824E /* NewChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewChatViewController.swift; path = UBookIt/Controllers/NewChatViewController.swift; sourceTree = "<group>"; };
+		18BB94121F33A95B001D824E /* NewChatUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewChatUserCell.swift; path = UBookIt/Views/NewChatUserCell.swift; sourceTree = "<group>"; };
 		18CDF3771F2268E000825999 /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StorageService.swift; path = UBookIt/Services/StorageService.swift; sourceTree = "<group>"; };
 		18CDF3791F227D1800825999 /* StorageRef+Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StorageRef+Post.swift"; path = "UBookIt/Extensions/StorageRef+Post.swift"; sourceTree = "<group>"; };
 		18CDF37B1F22822F00825999 /* UIImage+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Size.swift"; path = "UBookIt/Extensions/UIImage+Size.swift"; sourceTree = "<group>"; };
+		18CDF37D1F2BA14F00825999 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Chat.storyboard; path = UBookIt/Storyboards/Chat.storyboard; sourceTree = "<group>"; };
+		18CDF47E1F31366900825999 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatViewController.swift; path = UBookIt/Controllers/ChatVC/ChatViewController.swift; sourceTree = "<group>"; };
+		18CDF4A71F314E1C00825999 /* Chatto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chatto.framework; path = "../../../Library/Developer/Xcode/DerivedData/UBookIt-dacvgnzlugnogweuzselunotdjcl/Build/Products/Debug-iphonesimulator/Chatto/Chatto.framework"; sourceTree = "<group>"; };
+		18CDF4A81F314E1C00825999 /* ChattoAdditions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ChattoAdditions.framework; path = "../../../Library/Developer/Xcode/DerivedData/UBookIt-dacvgnzlugnogweuzselunotdjcl/Build/Products/Debug-iphonesimulator/ChattoAdditions/ChattoAdditions.framework"; sourceTree = "<group>"; };
+		18CDF4AB1F315ACD00825999 /* Pods_UBookIt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_UBookIt.framework; path = "../../../Library/Developer/Xcode/DerivedData/UBookIt-dacvgnzlugnogweuzselunotdjcl/Build/Products/Debug-iphonesimulator/Pods_UBookIt.framework"; sourceTree = "<group>"; };
 		18DA3F741F157E6D007619E1 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationViewController.swift; path = UBookIt/Controllers/LocationViewController.swift; sourceTree = "<group>"; };
 		18DA3F761F158B41007619E1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = UBookIt/Models/User.swift; sourceTree = "<group>"; };
 		18DA3F7A1F158E7A007619E1 /* Location.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Location.storyboard; path = UBookIt/Storyboards/Location.storyboard; sourceTree = "<group>"; };
@@ -78,7 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA9E3D8E58F13B8583E2BC43 /* Pods_UBookIt.framework in Frameworks */,
+				18CDF4AC1F315ACD00825999 /* Pods_UBookIt.framework in Frameworks */,
+				EA66F1240A1DC01306D3A49D /* Pods_UBookIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +154,9 @@
 				18DA3F861F16C369007619E1 /* ListingViewController.swift */,
 				18333E3A1F20220700DF5291 /* DetailViewController.swift */,
 				18DA3F9A1F192B56007619E1 /* ChoiceViewController.swift */,
+				18CDF47E1F31366900825999 /* ChatViewController.swift */,
+				18BB940C1F338F9F001D824E /* ChatListViewController.swift */,
+				18BB94101F33A0CF001D824E /* NewChatViewController.swift */,
 			);
 			name = "View Controllers";
 			path = ..;
@@ -160,6 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				18149FFA1F1D22E500A36E5C /* ListingCell.swift */,
+				18BB94121F33A95B001D824E /* NewChatUserCell.swift */,
+				18BB940E1F339650001D824E /* ChatListCell.swift */,
 			);
 			name = Views;
 			path = ..;
@@ -183,6 +211,7 @@
 				187ABB961F1447E400722471 /* Login.storyboard */,
 				18DA3F7A1F158E7A007619E1 /* Location.storyboard */,
 				18DA3F8A1F16C974007619E1 /* Choice.storyboard */,
+				18CDF37D1F2BA14F00825999 /* Chat.storyboard */,
 				187ABB8B1F1441B800722471 /* Main.storyboard */,
 			);
 			name = Storyboards;
@@ -195,6 +224,7 @@
 				18DA3F7C1F1690A1007619E1 /* UserService.swift */,
 				18DA3F821F16C005007619E1 /* ListingService.swift */,
 				18CDF3771F2268E000825999 /* StorageService.swift */,
+				18BB940A1F325742001D824E /* ChatService.swift */,
 			);
 			name = Services;
 			path = ..;
@@ -206,6 +236,8 @@
 				187ABB701F1423E300722471 /* UBookIt.xcdatamodeld */,
 				18DA3F761F158B41007619E1 /* User.swift */,
 				18DA3F841F16C33E007619E1 /* Listing.swift */,
+				18BB94041F32540A001D824E /* Chat.swift */,
+				18BB94081F3254FE001D824E /* Message.swift */,
 			);
 			name = Models;
 			path = ..;
@@ -214,6 +246,9 @@
 		544C931189C22E23363F05FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18CDF4AB1F315ACD00825999 /* Pods_UBookIt.framework */,
+				18CDF4A71F314E1C00825999 /* Chatto.framework */,
+				18CDF4A81F314E1C00825999 /* ChattoAdditions.framework */,
 				42A224B956677BA648ACEEAE /* Pods_UBookIt.framework */,
 			);
 			name = Frameworks;
@@ -291,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CDF37E1F2BA14F00825999 /* Chat.storyboard in Resources */,
 				18DA3F971F192345007619E1 /* GoogleService-Info.plist in Resources */,
 				18DA3F961F19233E007619E1 /* Assets.xcassets in Resources */,
 				18DA3F921F19233A007619E1 /* Login.storyboard in Resources */,
@@ -342,6 +378,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -354,6 +392,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SendBirdSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -392,19 +432,27 @@
 				18DA3F871F16C369007619E1 /* ListingViewController.swift in Sources */,
 				18CDF3781F2268E000825999 /* StorageService.swift in Sources */,
 				18DA3F851F16C33E007619E1 /* Listing.swift in Sources */,
+				18BB94111F33A0CF001D824E /* NewChatViewController.swift in Sources */,
 				187ABB991F144A3100722471 /* LoginViewController.swift in Sources */,
+				18BB940B1F325742001D824E /* ChatService.swift in Sources */,
 				18149FFB1F1D22E500A36E5C /* ListingCell.swift in Sources */,
 				18DA3F8F1F17EA25007619E1 /* ZipViewController.swift in Sources */,
 				18DA3F811F16A530007619E1 /* SearchViewController.swift in Sources */,
 				18CDF37A1F227D1800825999 /* StorageRef+Post.swift in Sources */,
 				18333E3F1F21759600DF5291 /* PhotoHelper.swift in Sources */,
+				18BB94131F33A95B001D824E /* NewChatUserCell.swift in Sources */,
+				18BB94051F32540A001D824E /* Chat.swift in Sources */,
 				18DA3F771F158B41007619E1 /* User.swift in Sources */,
 				187ABB891F14416B00722471 /* ViewController.swift in Sources */,
 				18CDF37C1F22822F00825999 /* UIImage+Size.swift in Sources */,
+				18CDF4951F31366900825999 /* ChatViewController.swift in Sources */,
 				187ABB6A1F1423E300722471 /* AppDelegate.swift in Sources */,
 				18DA3F8D1F16E74F007619E1 /* Storyboard+Utility.swift in Sources */,
+				18BB940F1F339650001D824E /* ChatListCell.swift in Sources */,
 				18DA3F9B1F192B56007619E1 /* ChoiceViewController.swift in Sources */,
+				18BB94091F3254FE001D824E /* Message.swift in Sources */,
 				187ABB721F1423E300722471 /* UBookIt.xcdatamodeld in Sources */,
+				18BB940D1F338F9F001D824E /* ChatListViewController.swift in Sources */,
 				18DA3F7F1F169B7E007619E1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

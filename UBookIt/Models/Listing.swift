@@ -28,7 +28,8 @@ class Listing:UKeyed {
     var dictValue: [String : Any] {
         let createdAgo = creationDate.timeIntervalSince1970
         let userDict = ["uid" : poster.uid,
-                        "zip" : poster.zip]
+                        "zip" : poster.zip,
+                        "name": poster.name]
         return ["title" : title,
                 "author" : author,
                 "condition" : condition,
@@ -50,7 +51,6 @@ class Listing:UKeyed {
         self.imgURL = imageURL
         self.extra = extra ?? ""
         self.creationDate = Date()
-        
     }
     
     init?(snapshot:DataSnapshot) {
@@ -65,6 +65,7 @@ class Listing:UKeyed {
             let userDict = dict["poster"] as? [String:Any],
             let uid = userDict["uid"] as? String,
             let zip = userDict["zip"] as? String,
+            let name = userDict["name"] as? String,
             let extra = dict["extra"] as? String?
         else {return nil}
         
@@ -76,7 +77,7 @@ class Listing:UKeyed {
         self.imgURL = imageURL
         self.price = price
         self.creationDate = Date(timeIntervalSince1970: createdAgo)
-        self.poster = User(uid: uid, zip: zip)
+        self.poster = User(uid: uid, zip: zip, name: name)
         self.extra = extra ?? ""
     }
 }
