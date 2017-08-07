@@ -21,6 +21,8 @@ class NewChatViewController: UIViewController {
         super.viewDidLoad()
         nextButton.isEnabled = false
         tableView.tableFooterView = UIView()
+        following.append(User.current)
+//        following.append(<#T##newElement: User##User#>)
 
         // Do any additional setup after loading the view.
     }

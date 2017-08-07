@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Esu-h1-0bV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Esu-h1-0bV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Login-->
         <scene sceneID="gQs-LP-Cpd">
             <objects>
-                <viewController title="Login" id="Esu-h1-0bV" customClass="LoginViewController" customModule="UBookIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" title="Login" id="Esu-h1-0bV" customClass="LoginViewController" customModule="UBookIt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="flg-qD-aU7"/>
                         <viewControllerLayoutGuide type="bottom" id="sIQ-bs-KlR"/>
@@ -88,14 +88,6 @@
             </objects>
             <point key="canvasLocation" x="520" y="347"/>
         </scene>
-        <!--Location-->
-        <scene sceneID="cYQ-eU-iUi">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Location" id="dTi-ey-NLh" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HJi-t1-R7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="676" y="323"/>
-        </scene>
         <!--Zip View Controller-->
         <scene sceneID="tw6-sH-IEH">
             <objects>
@@ -131,22 +123,14 @@
                                     <segue destination="Qat-E8-G7v" kind="show" identifier="toChoice" id="6DV-gA-4HH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Hacker Dojo is at 95054)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IU-b2-wG1">
-                                <rect key="frame" x="88.5" y="197" width="197" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NVq-iN-iVO" firstAttribute="centerX" secondItem="MvW-cc-3qa" secondAttribute="centerX" id="49N-zy-BhR"/>
-                            <constraint firstItem="9IU-b2-wG1" firstAttribute="top" secondItem="MvW-cc-3qa" secondAttribute="top" constant="197" id="MwQ-jM-9dO"/>
                             <constraint firstItem="UQ3-gc-q6o" firstAttribute="top" secondItem="4zG-2A-uTZ" secondAttribute="bottom" constant="53" id="NlW-RY-8DP"/>
                             <constraint firstItem="ALz-vy-y1t" firstAttribute="centerX" secondItem="MvW-cc-3qa" secondAttribute="centerX" id="a3Q-Y7-9pZ"/>
                             <constraint firstItem="UQ3-gc-q6o" firstAttribute="centerX" secondItem="MvW-cc-3qa" secondAttribute="centerX" id="aGd-Xw-R9s"/>
                             <constraint firstItem="XiX-PQ-IDh" firstAttribute="top" secondItem="NVq-iN-iVO" secondAttribute="bottom" constant="281" id="b7O-Xj-KAU"/>
-                            <constraint firstItem="9IU-b2-wG1" firstAttribute="centerX" secondItem="NVq-iN-iVO" secondAttribute="centerX" id="qkp-4N-Mp4"/>
                             <constraint firstItem="ALz-vy-y1t" firstAttribute="centerY" secondItem="MvW-cc-3qa" secondAttribute="centerY" id="y1Y-Qh-tPy"/>
                         </constraints>
                     </view>

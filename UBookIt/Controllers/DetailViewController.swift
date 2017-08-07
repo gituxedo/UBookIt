@@ -20,10 +20,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var extraLabel: UILabel!
     @IBOutlet weak var bookLargeImageView: UIImageView!
     
-//    @IBAction func buyButtonTapped(_ sender: UIButton) {
-//        self.performSegue(withIdentifier: "toChat", sender: self)
-//    }
-    
     var listing:Listing?
     
     override func viewDidLoad() {

@@ -60,27 +60,6 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         return
     }
     
-    
-    @IBOutlet weak var fuzzyDuckyLabel: UILabel!
-    var count = 0
-    @IBOutlet weak var countLabel: UILabel!
-    
-    @IBAction func buttonPushed(_ sender: UIButton) {
-        count += 1
-        countLabel.text = "Count: \(count)"
-        if count%15 == 0 {
-            fuzzyDuckyLabel.text = "FuzzyDucky"
-        } else if count%5 == 0 && count != 100 {
-            fuzzyDuckyLabel.text = "Ducky"
-        } else if count%3 == 0 {
-            fuzzyDuckyLabel.text = "Fuzzy"
-        } else if count % 100 == 0 {
-            fuzzyDuckyLabel.text = "steve jobz my a$$"
-        } else {
-            fuzzyDuckyLabel.text = ""
-        }
-    }
-    
     @IBAction func uploadPhotoTapped(_ sender: UIButton) {
             photoHelper.presentActionSheet(from: self)
     }

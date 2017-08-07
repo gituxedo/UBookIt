@@ -27,7 +27,6 @@
 		18CDF37E1F2BA14F00825999 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CDF37D1F2BA14F00825999 /* Chat.storyboard */; };
 		18CDF4951F31366900825999 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CDF47E1F31366900825999 /* ChatViewController.swift */; };
 		18CDF4AC1F315ACD00825999 /* Pods_UBookIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CDF4AB1F315ACD00825999 /* Pods_UBookIt.framework */; };
-		18DA3F751F157E6D007619E1 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F741F157E6D007619E1 /* LocationViewController.swift */; };
 		18DA3F771F158B41007619E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F761F158B41007619E1 /* User.swift */; };
 		18DA3F7D1F1690A1007619E1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F7C1F1690A1007619E1 /* UserService.swift */; };
 		18DA3F7F1F169B7E007619E1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F7E1F169B7E007619E1 /* Constants.swift */; };
@@ -38,7 +37,6 @@
 		18DA3F8D1F16E74F007619E1 /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F8C1F16E74F007619E1 /* Storyboard+Utility.swift */; };
 		18DA3F8F1F17EA25007619E1 /* ZipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA3F8E1F17EA25007619E1 /* ZipViewController.swift */; };
 		18DA3F921F19233A007619E1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB961F1447E400722471 /* Login.storyboard */; };
-		18DA3F931F19233A007619E1 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DA3F7A1F158E7A007619E1 /* Location.storyboard */; };
 		18DA3F941F19233A007619E1 /* Choice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DA3F8A1F16C974007619E1 /* Choice.storyboard */; };
 		18DA3F951F19233A007619E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB8B1F1441B800722471 /* Main.storyboard */; };
 		18DA3F961F19233E007619E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187ABB731F1423E300722471 /* Assets.xcassets */; };
@@ -78,9 +76,7 @@
 		18CDF4A71F314E1C00825999 /* Chatto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chatto.framework; path = "../../../Library/Developer/Xcode/DerivedData/UBookIt-dacvgnzlugnogweuzselunotdjcl/Build/Products/Debug-iphonesimulator/Chatto/Chatto.framework"; sourceTree = "<group>"; };
 		18CDF4A81F314E1C00825999 /* ChattoAdditions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ChattoAdditions.framework; path = "../../../Library/Developer/Xcode/DerivedData/UBookIt-dacvgnzlugnogweuzselunotdjcl/Build/Products/Debug-iphonesimulator/ChattoAdditions/ChattoAdditions.framework"; sourceTree = "<group>"; };
 		18CDF4AB1F315ACD00825999 /* Pods_UBookIt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_UBookIt.framework; path = "../../../Library/Developer/Xcode/DerivedData/UBookIt-dacvgnzlugnogweuzselunotdjcl/Build/Products/Debug-iphonesimulator/Pods_UBookIt.framework"; sourceTree = "<group>"; };
-		18DA3F741F157E6D007619E1 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationViewController.swift; path = UBookIt/Controllers/LocationViewController.swift; sourceTree = "<group>"; };
 		18DA3F761F158B41007619E1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = UBookIt/Models/User.swift; sourceTree = "<group>"; };
-		18DA3F7A1F158E7A007619E1 /* Location.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Location.storyboard; path = UBookIt/Storyboards/Location.storyboard; sourceTree = "<group>"; };
 		18DA3F7C1F1690A1007619E1 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = UBookIt/Services/UserService.swift; sourceTree = "<group>"; };
 		18DA3F7E1F169B7E007619E1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = UBookIt/Supporting/Constants.swift; sourceTree = "<group>"; };
 		18DA3F801F16A530007619E1 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = UBookIt/Controllers/SearchViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +145,6 @@
 				187ABB881F14416B00722471 /* ViewController.swift */,
 				18DA3F801F16A530007619E1 /* SearchViewController.swift */,
 				187ABB981F144A3100722471 /* LoginViewController.swift */,
-				18DA3F741F157E6D007619E1 /* LocationViewController.swift */,
 				18DA3F8E1F17EA25007619E1 /* ZipViewController.swift */,
 				18DA3F861F16C369007619E1 /* ListingViewController.swift */,
 				18333E3A1F20220700DF5291 /* DetailViewController.swift */,
@@ -209,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				187ABB961F1447E400722471 /* Login.storyboard */,
-				18DA3F7A1F158E7A007619E1 /* Location.storyboard */,
 				18DA3F8A1F16C974007619E1 /* Choice.storyboard */,
 				18CDF37D1F2BA14F00825999 /* Chat.storyboard */,
 				187ABB8B1F1441B800722471 /* Main.storyboard */,
@@ -330,7 +324,6 @@
 				18DA3F971F192345007619E1 /* GoogleService-Info.plist in Resources */,
 				18DA3F961F19233E007619E1 /* Assets.xcassets in Resources */,
 				18DA3F921F19233A007619E1 /* Login.storyboard in Resources */,
-				18DA3F931F19233A007619E1 /* Location.storyboard in Resources */,
 				18DA3F941F19233A007619E1 /* Choice.storyboard in Resources */,
 				18DA3F951F19233A007619E1 /* Main.storyboard in Resources */,
 			);
@@ -428,7 +421,6 @@
 				18DA3F831F16C005007619E1 /* ListingService.swift in Sources */,
 				18333E3B1F20220700DF5291 /* DetailViewController.swift in Sources */,
 				18DA3F7D1F1690A1007619E1 /* UserService.swift in Sources */,
-				18DA3F751F157E6D007619E1 /* LocationViewController.swift in Sources */,
 				18DA3F871F16C369007619E1 /* ListingViewController.swift in Sources */,
 				18CDF3781F2268E000825999 /* StorageService.swift in Sources */,
 				18DA3F851F16C33E007619E1 /* Listing.swift in Sources */,
