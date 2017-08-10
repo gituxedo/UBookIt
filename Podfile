@@ -19,10 +19,6 @@ target 'UBookIt' do
   pod 'FirebaseUI/Google'
   pod 'GoogleSignIn'
   
-  pod 'GoogleMaps'
-  pod 'GooglePlaces'
   pod 'Kingfisher', '~> 3.0'
-  
-  pod 'SendBirdSDK'
 
 end

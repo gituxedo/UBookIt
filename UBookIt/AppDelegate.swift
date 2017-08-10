@@ -10,9 +10,6 @@ import UIKit
 import CoreData
 import Firebase
 import FirebaseAuthUI
-import GoogleMaps
-import GooglePlaces
-import SendBirdSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,9 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         configureInitialRootViewController(for: window)
-        SBDMain.initWithApplicationId("C0E4A62A-D5C5-4B80-862D-47B99B776CFF")
-        GMSServices.provideAPIKey("AIzaSyCl-zuIn0SxEDSM_3oWBf0u41NdwMsjue8")
-        GMSPlacesClient.provideAPIKey("AIzaSyCl-zuIn0SxEDSM_3oWBf0u41NdwMsjue8")
         return true
     }
 
@@ -100,8 +94,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             do {
                 try context.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }

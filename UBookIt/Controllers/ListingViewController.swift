@@ -11,7 +11,7 @@ import UIKit
 import FirebaseStorage
 import FirebaseDatabase
 
-class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
     
     let photoHelper = PhotoHelper()
     var imgURL = ""
@@ -33,7 +33,9 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             let author = self.authorTextField.text,
             let edition = self.editionTextField.text,
             let price = Double(self.priceTextField.text!),
-            let _ = self.bookImageView.image
+            let _ = self.bookImageView.image,
+            extraNotesTextView.text != nil,
+            extraNotesTextView.text != "Input your preferred method of contact here"
             else {
                 let fillPopup = UIAlertController(title: "Cannot post", message: "Please complete all fields!", preferredStyle: .alert)
                 let ok = UIAlertAction.init(title: "OK", style: .cancel, handler: { (action) in
@@ -72,9 +74,12 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         super.viewDidLoad()
         self.conditionPicker.delegate = self
         self.conditionPicker.dataSource = self
+        self.extraNotesTextView.delegate = self
         pickerData = ["Perfect", "Like New", "Good", "Fair", "Poor"]
         postButton.isEnabled = false
         self.hideKeyboard()
+        extraNotesTextView.text = "Input your preferred method of contact here"
+        extraNotesTextView.textColor = UIColor.lightGray
         photoHelper.completionHandler = {(image) in
             
             StorageService.uploadImage(image, at: StorageReference.newPostImageReference(), completion: { (downloadURL) in
@@ -89,6 +94,19 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Input your preferred method of contact here"
+            textView.textColor = UIColor.lightGray
+        }
     }
     
     // The number of columns of data

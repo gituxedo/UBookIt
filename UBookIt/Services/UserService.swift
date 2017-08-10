@@ -26,6 +26,19 @@ struct UserService {
         })
     }
     
+    static func ownPosts(user: User, completion: @escaping ([Listing]) -> Void) {
+        let ref = Database.database().reference().child("listings/\(user.uid)")
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return completion([])}
+            let listings:[Listing] = snapshot.reversed().flatMap {
+                guard let listing = Listing(snapshot: $0)
+                    else {return nil}
+                return listing
+            }
+            completion(listings)
+        })
+    }
+    
     static func create(_ firUser: FIRUser, zipcode: String, completion: @escaping (User?) -> Void) {
         let userAttrs = ["zipcode": zipcode, "name": firUser.displayName]
         let ref = Database.database().reference().child("users").child(firUser.uid)

@@ -12,7 +12,6 @@ import FirebaseDatabase.FIRDataSnapshot
 
 protocol UKeyed {
     var key:String? {get set}
-    var extra:String? {get set}
 }
 class Listing:UKeyed {
     var key: String?
@@ -24,7 +23,7 @@ class Listing:UKeyed {
     let edition: String
     let price: Double
     let imgURL: String
-    var extra: String?
+    var extra: String
     var dictValue: [String : Any] {
         let createdAgo = creationDate.timeIntervalSince1970
         let userDict = ["uid" : poster.uid,
@@ -35,13 +34,13 @@ class Listing:UKeyed {
                 "condition" : condition,
                 "edition" : edition,
                 "price" : price,
-                "extra" : extra ?? "",
+                "extra" : extra,
                 "imageURL" : imgURL,
                 "created_at" : createdAgo,
                 "poster" : userDict]
     }
     
-    init(title:String, author:String, condition:String, edition:String, price:Double, imageURL:String, extra: String?) {
+    init(title:String, author:String, condition:String, edition:String, price:Double, imageURL:String, extra: String) {
         self.title = title
         self.author = author
         self.condition = condition
@@ -49,7 +48,7 @@ class Listing:UKeyed {
         self.price = price
         self.poster = User.current
         self.imgURL = imageURL
-        self.extra = extra ?? ""
+        self.extra = extra
         self.creationDate = Date()
     }
     
@@ -66,7 +65,7 @@ class Listing:UKeyed {
             let uid = userDict["uid"] as? String,
             let zip = userDict["zip"] as? String,
             let name = userDict["name"] as? String,
-            let extra = dict["extra"] as? String?
+            let extra = dict["extra"] as? String
         else {return nil}
         
         self.key = snapshot.key
@@ -78,6 +77,6 @@ class Listing:UKeyed {
         self.price = price
         self.creationDate = Date(timeIntervalSince1970: createdAgo)
         self.poster = User(uid: uid, zip: zip, name: name)
-        self.extra = extra ?? ""
+        self.extra = extra
     }
 }

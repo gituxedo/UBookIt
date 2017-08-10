@@ -8,7 +8,6 @@
 
 import Foundation
 import FirebaseDatabase.FIRDataSnapshot
-//import GoogleMaps
 
 class User:NSObject {
     
@@ -47,7 +46,8 @@ class User:NSObject {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        guard let uid = aDecoder.decodeObject(forKey: Constants.UserDefaults.uid) as? String,            let zip = aDecoder.decodeObject(forKey: Constants.UserDefaults.zip) as? String,
+        guard let uid = aDecoder.decodeObject(forKey: Constants.UserDefaults.uid) as? String,
+            let zip = aDecoder.decodeObject(forKey: Constants.UserDefaults.zip) as? String,
             let name = aDecoder.decodeObject(forKey: Constants.UserDefaults.name) as? String
             else { return nil }
         

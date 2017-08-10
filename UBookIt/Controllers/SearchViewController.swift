@@ -16,14 +16,12 @@ class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDel
     @IBOutlet weak var bookTableView: UITableView!
     
     static var listings:[Listing] = []
-    var indices:[IndexPath] = []
     var bookSearchResults:[Listing]?
     var shouldShowResults = false
     var searchController: UISearchController!
     
     @IBAction func unwindToSearchViewController(_ segue: UIStoryboardSegue) {
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,28 +61,6 @@ class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDel
         if indexPath.row % 2 == 0 {
             cell.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.0)
         }; cell.backgroundColor = .white
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        let ref = Database.database().reference().child("listings/\(User.current.uid)")
-        if editingStyle == .delete {
-            if User.current.uid == SearchViewController.listings[indexPath.row].poster.uid {
-                let postRef = ref.child(SearchViewController.listings[indexPath.row].key!)
-                postRef.setValue(nil)
-                let zipRef = Database.database().reference().child("zipcodes/\(User.current.zip)/\(SearchViewController.listings[indexPath.row].key!)")
-                zipRef.setValue(nil)
-                SearchViewController.listings.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .fade)
-                self.bookTableView.reloadData()
-            } else {
-                let denyPopup = UIAlertController(title: "Cannot delete", message: "You cannot delete other users' listings!", preferredStyle: .alert)
-                let ok = UIAlertAction.init(title: "Got it!", style: .default) { (action) in
-                    print("tapped: \(action.title!)")
-                }
-                denyPopup.addAction(ok)
-                self.present(denyPopup, animated: true, completion: {return})
-            }
-        }
     }
 
     //MARK: - Search Bar
