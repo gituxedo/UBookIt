@@ -29,8 +29,8 @@ struct ListingService {
         let imageRef = StorageReference.newPostImageReference()
         StorageService.uploadImage(image, at: imageRef) { (downloadURL) in
             guard let downloadURL = downloadURL else {return}
-            let urlString = downloadURL.absoluteString
-            print("image url: \(urlString)")
+            let _ = downloadURL.absoluteString
+//            print("image url: \(urlString)")
         }
     }
     

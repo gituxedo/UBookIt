@@ -18,7 +18,7 @@ struct StorageService {
         }
         
         reference.putData(imageData, metadata: nil, completion: { (metadata, error) in
-            if let error = error {
+            if let _ = error {
 //                assertionFailure(error.localizedDescription)
                 return completion(nil)
             }; completion(metadata?.downloadURL())

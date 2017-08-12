@@ -26,7 +26,6 @@ class DetailViewController: UIViewController {
     @IBAction func buyButtonTapped(_ sender: UIButton) {
         let contactPopup = UIAlertController(title: "Want to buy this book?", message: "Contact the seller!\n"+(listing?.extra)!, preferredStyle: .alert)
         let ok = UIAlertAction.init(title: "Got it!", style: .default) { (action) in
-            print("tapped: \(action.title!)")
         }
         contactPopup.addAction(ok)
         self.present(contactPopup, animated: true, completion: {return})
@@ -74,8 +73,6 @@ class DetailViewController: UIViewController {
             editionLabel.text = listing?.edition
             conditionLabel.text = listing?.condition
             extraLabel.text = listing?.extra ?? "None"
-            
-            print("listing details shown")
         }
     }
 }

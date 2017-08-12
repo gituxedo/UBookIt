@@ -36,7 +36,6 @@ class ChoiceViewController: UIViewController {
             let signOutAction = UIAlertAction(title: "Sign Out", style: .default) { _ in
                 do {
                     try Auth.auth().signOut()
-                    print("log out user")
                 } catch let error as NSError {
                     assertionFailure("Error signing out: \(error.localizedDescription)")
                 }
@@ -50,14 +49,5 @@ class ChoiceViewController: UIViewController {
     }
     
     @IBAction func unwindToChoiceViewController(_ segue: UIStoryboardSegue) {
-        //perform actions later
-        if segue.identifier == "cancel" {
-            print("tapped cancel")
-        } else if segue.identifier == "post" {
-            
-            print("posted")
-        } else {
-            print("back from search")
-        }
     }
 }

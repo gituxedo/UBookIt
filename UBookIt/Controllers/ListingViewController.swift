@@ -16,6 +16,7 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     let photoHelper = PhotoHelper()
     var imgURL = ""
     
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var authorTextField: UITextField!
     @IBOutlet weak var conditionPicker: UIPickerView!
@@ -26,6 +27,7 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var bookImageView: UIImageView!
     @IBOutlet weak var postButton: UIBarButtonItem!
     
+    @IBOutlet weak var contentView: UIView!
     
     @IBAction func postButtonTapped(_ sender: UIBarButtonItem) {
         
@@ -39,7 +41,6 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             else {
                 let fillPopup = UIAlertController(title: "Cannot post", message: "Please complete all fields!", preferredStyle: .alert)
                 let ok = UIAlertAction.init(title: "OK", style: .cancel, handler: { (action) in
-                    print("tapped \(action.title!)")
                 })
                 fillPopup.addAction(ok)
                 self.present(fillPopup, animated: true, completion: {return})
@@ -48,13 +49,11 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         let confirmPopup = UIAlertController(title: "Post", message: "Are you sure you want to post this listing?", preferredStyle: .alert)
         let ok = UIAlertAction.init(title: "Yes", style: .default) { (action) in
-            print("posted: \(action.title!)")
             ListingService.create(title: title, author: author, condition: self.pickerData[self.conditionPicker.selectedRow(inComponent: 0)], edition: edition, price: price, imgURL: self.imgURL, extra: self.extraNotesTextView.text)
-            print("imgURL: \(self.imgURL)")
+//            print("imgURL: \(self.imgURL)")
             self.performSegue(withIdentifier: "didPost", sender: self)
         }
         let cancel = UIAlertAction.init(title: "Cancel", style: .cancel, handler: { (action) in
-            print("tapped \(action.title!)")
         })
         confirmPopup.addAction(cancel)
         confirmPopup.addAction(ok)
@@ -76,10 +75,9 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         self.conditionPicker.dataSource = self
         self.extraNotesTextView.delegate = self
         pickerData = ["Perfect", "Like New", "Good", "Fair", "Poor"]
+        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: 600)
         postButton.isEnabled = false
         self.hideKeyboard()
-        extraNotesTextView.text = "Input your preferred method of contact here"
-        extraNotesTextView.textColor = UIColor.lightGray
         photoHelper.completionHandler = {(image) in
             
             StorageService.uploadImage(image, at: StorageReference.newPostImageReference(), completion: { (downloadURL) in
@@ -94,6 +92,16 @@ class ListingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        extraNotesTextView.text = "Input your preferred method of contact here"
+        extraNotesTextView.textColor = UIColor.lightGray
+        scrollView.contentSize.height = scrollView.contentSize.height + 300
+        print("scroll view \(scrollView.contentSize.height)")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        scrollView.contentSize.height = scrollView.contentSize.height - 300
+
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {

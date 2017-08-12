@@ -21,7 +21,6 @@ class ZipViewController: UIViewController {
         UserService.create(firUser, zipcode: zip) { (user) in
             guard let user = user else { return }
             User.setCurrent(user, writeToUserDefaults: true)
-            print("Created new user: \(user.uid)")
         }
     }
 }

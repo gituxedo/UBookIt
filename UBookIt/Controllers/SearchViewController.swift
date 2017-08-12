@@ -30,7 +30,7 @@ class SearchViewController:UIViewController, UITableViewDelegate, UISearchBarDel
         UserService.posts(user: User.current) { (listings) in
             SearchViewController.listings = listings
             self.bookTableView.reloadData()
-            print("listings: \(listings)")
+//            print("listings: \(listings)")
             self.configureSearchController()
         }
     }

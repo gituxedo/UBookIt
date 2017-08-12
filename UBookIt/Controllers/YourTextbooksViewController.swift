@@ -25,7 +25,6 @@ class YourTextbooksViewController: UIViewController, UITableViewDelegate {
         UserService.ownPosts(user: User.current) { (myListings) in
             self.myListings = myListings
             self.bookTableView.reloadData()
-            print("my listings: \(myListings)")
         }
     }
     

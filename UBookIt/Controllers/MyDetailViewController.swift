@@ -42,8 +42,6 @@ class MyDetailViewController: UIViewController {
             editionLabel.text = listing?.edition
             conditionLabel.text = listing?.condition
             extraLabel.text = listing?.extra ?? "None"
-            
-            print("listing details shown")
         }
     }
 }
